@@ -185,7 +185,7 @@ public class Schedule extends Thread implements Serializable {
 
 		Main.dumpConfigFile();
 	}
-
+	//SMELL: Duplicate Code - <explanation>
 	private int numForName(String nameOfDay) {
 		int dayNum = 0;
 		if (nameOfDay.equals("Sunday")) {
