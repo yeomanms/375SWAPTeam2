@@ -46,59 +46,20 @@ public class CalendarGUI extends javax.swing.JFrame {
 		this.fillTableForThisMonth();
 	}
 
+    // SWAP 1, TEAM 2
 	private void setTitleMonth(int n, int year) {
-		switch (n) {
-		case (1):
-			this.monthTitle.setText("January " + year);
-			this.monthName = "January " + year;
-			break;
-		case (2):
-			this.monthTitle.setText("February " + year);
-			this.monthName = "February " + year;
-			break;
-		case (3):
-			this.monthTitle.setText("March " + year);
-			this.monthName = "March " + year;
-			break;
-		case (4):
-			this.monthTitle.setText("April " + year);
-			this.monthName = "April " + year;
-			break;
-		case (5):
-			this.monthTitle.setText("May " + year);
-			this.monthName = "May " + year;
-			break;
-		case (6):
-			this.monthTitle.setText("June " + year);
-			this.monthName = "June " + year;
-			break;
-		case (7):
-			this.monthTitle.setText("July " + year);
-			this.monthName = "July " + year;
-			break;
-		case (8):
-			this.monthTitle.setText("August " + year);
-			this.monthName = "August " + year;
-			break;
-		case (9):
-			this.monthTitle.setText("September " + year);
-			this.monthName = "September " + year;
-			break;
-		case (10):
-			this.monthTitle.setText("October " + year);
-			this.monthName = "October " + year;
-			break;
-		case (11):
-			this.monthTitle.setText("November " + year);
-			this.monthName = "November " + year;
-			break;
-		case (12):
-			this.monthTitle.setText("December " + year);
-			this.monthName = "December " + year;
-			break;
-
-		}
+        String title = String.format("%s %s", MonthInYear(n) , year);
+	    this.monthTitle.setText(this.monthName = title);
 	}
+
+    // SWAP 1, TEAM 2
+    private String MonthInYear(int n) {
+        return new String[]{
+                "January", "February", "March", "April",
+                "May", "June", "July", "August", "September",
+                "October", "November", "December"
+        }[n-1];
+    }
 
 	/**
 	 * Displays the calendar for the current month based on the computers month.
@@ -159,8 +120,8 @@ public class CalendarGUI extends javax.swing.JFrame {
 						+ String.format("%02d",
 								this.cal.get(Calendar.DAY_OF_MONTH)) + "/"
 						+ String.format("%02d", this.cal.get(Calendar.YEAR));
-				String colTitle = this.getNameforNum(this.cal
-						.get(Calendar.DAY_OF_WEEK)) + " (" + numDate + ")";
+				String colTitle = Day.DayOfTheWeek(this.cal
+                        .get(Calendar.DAY_OF_WEEK)) + " (" + numDate + ")";
 				table.addColumn(colTitle, colData);
 
 			}
@@ -236,8 +197,8 @@ public class CalendarGUI extends javax.swing.JFrame {
 								this.cal.get(Calendar.DAY_OF_MONTH))
 						+ "/"
 						+ this.cal.get(Calendar.YEAR);
-				String colTitle = this.getNameforNum(this.cal
-						.get(Calendar.DAY_OF_WEEK)) + " (" + numDate + ")";
+				String colTitle = Day.DayOfTheWeek(this.cal
+                        .get(Calendar.DAY_OF_WEEK)) + " (" + numDate + ")";
 				table.addColumn(colTitle, colData);
 
 			}
@@ -333,8 +294,8 @@ public class CalendarGUI extends javax.swing.JFrame {
 									this.cal.get(Calendar.DAY_OF_MONTH))
 							+ "/"
 							+ this.cal.get(Calendar.YEAR);
-					String colTitle = this.getNameforNum(this.cal
-							.get(Calendar.DAY_OF_WEEK)) + " (" + numDate + ")";
+					String colTitle = Day.DayOfTheWeek(this.cal
+                            .get(Calendar.DAY_OF_WEEK)) + " (" + numDate + ")";
 					table.addColumn(colTitle, colData);
 
 				}
@@ -347,25 +308,8 @@ public class CalendarGUI extends javax.swing.JFrame {
 
 	}
 
-	private String getNameforNum(int n) {
-		switch (n) {
-		case (1):
-			return "Sunday";
-		case (2):
-			return "Monday";
-		case (3):
-			return "Tuesday";
-		case (4):
-			return "Wednesday";
-		case (5):
-			return "Thursday";
-		case (6):
-			return "Friday";
-		case (7):
-			return "Saturday";
-		}
-		return null;
-	}
+    // SWAP 1, TEAM 2
+	// Moved getNameforNum to Day as DayOfTheWeek
 
 	private void initComponents() {
 

@@ -2,6 +2,8 @@ package scheduleGenerator;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Day is used to store jobs for a given day.
@@ -65,4 +67,27 @@ public class Day implements Serializable{
 	public String getNameOfDay() {
 		return this.dayOfWeek;
 	}
+
+    // SWAP 1, TEAM 2
+    // QUALITY CHANGES
+    public int getDayOfWeek(){
+        return DayOfTheWeekN(this.dayOfWeek);
+    }
+
+    // SWAP 1, TEAM 2
+    // QUALITY CHANGES
+    public static String DayOfTheWeek(int n) {
+        return new String[]{
+                "Sunday", "Monday", "Tuesday", "Wednesday",
+                "Thursday", "Friday", "Saturday"
+        }[n-1];
+    }
+
+    // SWAP 1, TEAM 2
+    // QUALITY CHANGES
+    public static int DayOfTheWeekN(String s) {
+        return Arrays.asList(
+                "Sunday", "Monday", "Tuesday", "Wednesday",
+                "Thursday", "Friday", "Saturday").indexOf(s);
+    }
 }
