@@ -78,6 +78,8 @@ public class Config extends javax.swing.JFrame {
     }
 
     // SWAP 1, TEAM 2
+    // With additional refactoring, the initialization could be reduced in size
+    // much like
     private void initComponents() {
         this.WeekCheck = new JCheckBox[7];
         for(int i = 0; i< WeekCheck.length; i++){
