@@ -17,6 +17,8 @@ import javax.swing.table.DefaultTableModel;
  * 
  * @author schneimd
  */
+
+//SMELL: Large Class - <explanation>
 public class CalendarGUI extends javax.swing.JFrame {
 
 	private Schedule schedule;
