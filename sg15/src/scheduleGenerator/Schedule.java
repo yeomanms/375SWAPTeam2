@@ -210,7 +210,9 @@ public class Schedule extends Thread implements Serializable {
         }
     }
 
-	//SMELL: Duplicate Code - <explanation>
+	//SMELL: Duplicate Code - we fixed this almost exact same method in the CalendarGUI class, each of these if-else cases are nearly 
+	//the exact same and the size of this method could be cut in half by refactoring it.  Could be improved by making this simple method
+	//callable gloabally.
 	private int numForName(String nameOfDay) {
 		int dayNum = 0;
 		if (nameOfDay.equals("Sunday")) {

@@ -143,6 +143,8 @@ public class HTMLGenerator {
 	/**
 	 * Used to put header.
 	 */
+	//SMELL: Inappropriate Intimacy - this is inappropriate to be seen by any class even its self.  These crazy long lines
+	//of html code should be hidden in an xml or json file so it cannot be easily edited.
 	static String top = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns='http://www.w3.org/1999/xhtml'><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><title>Rose-Hulman Schedule Generator</title><link href='css/main.css' rel='stylesheet' type='text/css' />\n" +
 			"<script type='text/javascript'>window.onload = function() {\n	" +
 			"		document.getElementById('monthName').innerHTML = '<input onclick=\\\'monthBack()\\\' type=\\\'submit\\\' name=\\\'monthBack\\\' id=\\\'monthBack\\\' value=\\\'&lt;\\\' /> ' + months[monthIndex][0] + 		' <input type=\\\'submit\\\' name=\\\'monthAhead\\\' id=\\\'monthAhead\\\' value=\\\'&gt;\\\' onclick=\\\'monthAhead()\\\' />';\n" +

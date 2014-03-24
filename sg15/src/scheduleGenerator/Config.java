@@ -58,6 +58,9 @@ public class Config extends javax.swing.JFrame {
 	private void initDyn() {
 
         // SWAP 1, TEAM 2
+    	//SMELL: Data Clump - There are many areas in this class where data in the format below is "clumped" together.
+    	//These would be hard to turn into an object because they are GUI related but there may be a better way to clean this
+    	//clump up.
         this.WeekJobList = new JList[7];
         this.WeekScrollPane = new JScrollPane[7];
         this.WeekJobName = new JTextField[7];
@@ -80,6 +83,8 @@ public class Config extends javax.swing.JFrame {
     // SWAP 1, TEAM 2
     // With additional refactoring, the initialization could be reduced in size
     // much like
+    //SMELL: Shotgun Surgery - Whenever small changes were made to refactor this class, many more changes were demanded in order for
+    // the project to work in a future state.
     private void initComponents() {
         this.WeekCheck = new JCheckBox[7];
         for(int i = 0; i< WeekCheck.length; i++){

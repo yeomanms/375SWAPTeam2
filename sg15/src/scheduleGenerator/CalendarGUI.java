@@ -1,5 +1,6 @@
 package scheduleGenerator;
 
+import java.awt.Dimension;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -18,7 +19,8 @@ import javax.swing.table.DefaultTableModel;
  * @author schneimd
  */
 
-//SMELL: Large Class - <explanation>
+//SMELL: Large Class - This class was very large to begin with and is still quite large.  There may be areas where this can be
+//refactored additionally to improve the size and the focus of this large class.
 public class CalendarGUI extends javax.swing.JFrame {
 
 	private Schedule schedule;
@@ -52,6 +54,7 @@ public class CalendarGUI extends javax.swing.JFrame {
 	private void setTitleMonth(int n, int year) {
         String title = String.format("%s %s", MonthInYear(n) , year);
 	    this.monthTitle.setText(this.monthName = title);
+	    this.monthTitle.setMinimumSize(new Dimension(100, 100));
 	}
 
     // SWAP 1, TEAM 2
@@ -348,6 +351,7 @@ public class CalendarGUI extends javax.swing.JFrame {
 				});
 
 		this.nextMonthButton.setText(">");
+		
 		this.nextMonthButton
 				.addActionListener(new java.awt.event.ActionListener() {
 					@Override

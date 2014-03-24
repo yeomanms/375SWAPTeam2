@@ -23,6 +23,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * 
  * @author schneimd
  */
+
+//SMELL: Large class - This class is quite large and the project as a whole would probably be improved if this classes method were
+//refactored.
 public class WorkerSetup extends javax.swing.JFrame {
 
 	private ArrayList<Day> days;
@@ -170,6 +173,7 @@ public class WorkerSetup extends javax.swing.JFrame {
 		javax.swing.GroupLayout workerTab1Layout = new javax.swing.GroupLayout(
 				tempWorkerTab);
 		tempWorkerTab.setLayout(workerTab1Layout);
+		//: Duplicated Code - <explanation>
 		workerTab1Layout
 				.setHorizontalGroup(workerTab1Layout
 						.createParallelGroup(
@@ -250,6 +254,8 @@ public class WorkerSetup extends javax.swing.JFrame {
 	/**
 	 * This method is called from within the constructor to initialize the form.
 	 */
+	//SMELL: Long Method - This very long method is begging to be refactored.   It is quite long and would be improved if it was
+	// broken into a couple smaller methods.
 	private void initComponents() {
 
 		this.workerTabPanel = new javax.swing.JTabbedPane();
@@ -309,6 +315,7 @@ public class WorkerSetup extends javax.swing.JFrame {
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
 				getContentPane());
 		getContentPane().setLayout(layout);
+		
 		layout.setHorizontalGroup(layout
 				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGroup(

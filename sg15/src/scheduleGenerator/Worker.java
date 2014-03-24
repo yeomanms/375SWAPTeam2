@@ -11,6 +11,9 @@ import java.util.HashMap;
  * @author schneimd.
  *         Created Oct 15, 2012.
  */
+
+//SMELL: Lazy Class - This class does do entirely different work than the worker setup class.  This class may be collapsable back into
+// the worker setup class.
 public class Worker implements Serializable{
 
 	private String name;
