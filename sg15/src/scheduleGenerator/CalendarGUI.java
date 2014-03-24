@@ -33,7 +33,7 @@ public class CalendarGUI extends javax.swing.JFrame {
 
 	/**
 	 * Creates new form Calendar
-	 * 
+	 *
 	 * @param schd
 	 */
 	public CalendarGUI(Schedule schd) {

@@ -220,34 +220,34 @@ public class Config extends javax.swing.JFrame {
                     }
                 });
 
-                javax.swing.GroupLayout sundayTabLayout = new javax.swing.GroupLayout(this.WeekTab[i]);
-                this.WeekTab[i].setLayout(sundayTabLayout);
-                sundayTabLayout.setHorizontalGroup(
-                        sundayTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(sundayTabLayout.createSequentialGroup()
+                javax.swing.GroupLayout weekTabLayout = new javax.swing.GroupLayout(this.WeekTab[i]);
+                this.WeekTab[i].setLayout(weekTabLayout);
+                weekTabLayout.setHorizontalGroup(
+                        weekTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(weekTabLayout.createSequentialGroup()
                                         .addContainerGap()
                                         .addComponent(this.WeekScrollPane[i], javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addGroup(sundayTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(sundayTabLayout.createSequentialGroup()
+                                        .addGroup(weekTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(weekTabLayout.createSequentialGroup()
                                                         .addComponent(this.WeekLabel[i])
-                                                        .addGroup(sundayTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addGroup(sundayTabLayout.createSequentialGroup()
+                                                        .addGroup(weekTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(weekTabLayout.createSequentialGroup()
                                                                         .addGap(14, 14, 14)
                                                                         .addComponent(this.WeekAddJob[i]))
-                                                                .addGroup(sundayTabLayout.createSequentialGroup()
+                                                                .addGroup(weekTabLayout.createSequentialGroup()
                                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                         .addComponent(this.WeekJobName[i], javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                                 .addComponent(this.WeekDeleteJob[i]))
                                         .addContainerGap(431, Short.MAX_VALUE))
                 );
-                sundayTabLayout.setVerticalGroup(
-                        sundayTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(sundayTabLayout.createSequentialGroup()
+                weekTabLayout.setVerticalGroup(
+                        weekTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(weekTabLayout.createSequentialGroup()
                                         .addContainerGap()
-                                        .addGroup(sundayTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addGroup(sundayTabLayout.createSequentialGroup()
-                                                        .addGroup(sundayTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addGroup(weekTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addGroup(weekTabLayout.createSequentialGroup()
+                                                        .addGroup(weekTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                                 .addComponent(this.WeekJobName[i], javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addComponent(this.WeekLabel[i]))
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)

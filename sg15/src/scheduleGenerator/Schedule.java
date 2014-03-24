@@ -1,12 +1,9 @@
 package scheduleGenerator;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Random;
-import java.util.TreeMap;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -24,6 +21,7 @@ public class Schedule extends Thread implements Serializable {
 	private GregorianCalendar cal;
 	private HashMap<Integer, ArrayList<Worker>> workerIndices;
 	private boolean workerForEveryJob = true;
+    private final Worker EmptyWorker = new Worker("Empty", new ArrayList<Day>(), null);
 
 	/**
 	 * Used to construct an initial schedule, used if one does not exist.
@@ -123,7 +121,7 @@ public class Schedule extends Thread implements Serializable {
             addWorkersToJob(day, job, workersWorking, workersForJob);
 
             if (workersForJob.size() > 0)
-                ChooseWorker(job, jobsWithWorker, workersWorking, workersForJob);
+                ChooseWorker(day, job, jobsWithWorker, workersWorking, workersForJob);
             else {
                 EmptyWorker(day, job, jobsWithWorker);
                 break;
@@ -141,7 +139,7 @@ public class Schedule extends Thread implements Serializable {
 
     // SWAP 1, TEAM 2
     private void EmptyWorker(Day day, String job, TreeMap<String, Worker> jobsWithWorker) {
-        jobsWithWorker.put(job, new Worker("Empty", new ArrayList<Day>()));
+        jobsWithWorker.put(job, EmptyWorker);
         JOptionPane.showMessageDialog(
                 new JFrame(),
                 "No workers are able to work as a(n) "
@@ -151,16 +149,41 @@ public class Schedule extends Thread implements Serializable {
     }
 
     // SWAP 1, TEAM 2
-    private void ChooseWorker(String job, TreeMap<String, Worker> jobsWithWorker, ArrayList<String> workersWorking, ArrayList<Worker> workersForJob){
-        Worker workerForJob = workersForJob.get(new Random().nextInt(workersForJob.size()));
+    private void ChooseWorker(Day day, String job, TreeMap<String, Worker> jobsWithWorker, ArrayList<String> workersWorking, ArrayList<Worker> workersForJob){
+        Worker workerForJob = getRandomFreeWorker(workersForJob, getDate());
+        if(workerForJob.equals(EmptyWorker)){
+            EmptyWorker(day, job, jobsWithWorker);
+            return;
+        }
         for (Worker w : workersForJob) {
-            if (w.numWorkedForJob(job) < workerForJob.numWorkedForJob(job)) {
+            if (!w.isBusy(getDate())
+                && w.numWorkedForJob(job) < workerForJob.numWorkedForJob(job)) {
                 workerForJob = w;
             }
         }
         jobsWithWorker.put(job, workerForJob);
         workersWorking.add(workerForJob.getName());
         workerForJob.addWorkedJob(job);
+    }
+
+    private Worker getRandomFreeWorker(ArrayList<Worker> workers, Date date){
+        ArrayList<Worker> possibleWorkers = new ArrayList<Worker>();
+        for(Worker w : workers){
+            if(!w.isBusy(date))
+                possibleWorkers.add(w);
+        }
+        return possibleWorkers.size() > 0
+                ? possibleWorkers.get(new Random().nextInt(possibleWorkers.size()))
+                : EmptyWorker;
+    }
+
+    private Date getDate(){
+        Calendar c = this.cal;
+        c.set(Calendar.HOUR_OF_DAY, 0);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND, 0);
+        return c.getTime();
     }
 
     // SWAP 1, TEAM 2
@@ -186,7 +209,6 @@ public class Schedule extends Thread implements Serializable {
             }
         }
     }
-
 
 	//SMELL: Duplicate Code - <explanation>
 	private int numForName(String nameOfDay) {

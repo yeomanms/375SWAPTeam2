@@ -2,6 +2,7 @@ package scheduleGenerator;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -13,20 +14,23 @@ import java.util.HashMap;
 public class Worker implements Serializable{
 
 	private String name;
+    // SWAP 1, TEAM 2
+    // QUALITY CHANGES
 	private ArrayList<Day> days = new ArrayList<Day>();
+    private ArrayList<Date> busy = new ArrayList<Date>();
 	private HashMap<String, Integer> timesWorked;
 	
 	/**
 	 * Builds a worker with available days.
 	 * @param name 
-	 * @param days 
+	 * @param days
 	 *
-	 * @param jobs
 	 */
-	public Worker(String name, ArrayList<Day> days)
+	public Worker(String name, ArrayList<Day> days, ArrayList<Date> busy)
 	{
 		this.name = name;
 		this.days = days;
+        this.busy = busy;
 		this.timesWorked = new HashMap<String, Integer>();
 		for(Day day: days) {
 			for(String job:day.getJobs()) {
@@ -95,5 +99,10 @@ public class Worker implements Serializable{
 	public void addDay(Day d) {
 		this.days.add(d);
 	}
+
+    // QUALITY CHANGES
+    public boolean isBusy(Date d){
+        return busy.contains(d);
+    }
 	
 }

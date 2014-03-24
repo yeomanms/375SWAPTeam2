@@ -3,9 +3,16 @@ package scheduleGenerator;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /*
  * To change this template, choose Tools | Templates
@@ -20,6 +27,7 @@ public class WorkerSetup extends javax.swing.JFrame {
 
 	private ArrayList<Day> days;
 	private ArrayList<JPanel> workerTabs;
+    private ArrayList<ArrayList<Date>> calendars;
 
 	/**
 	 * Allows for editing of already made workers.
@@ -29,6 +37,7 @@ public class WorkerSetup extends javax.swing.JFrame {
 	public WorkerSetup(ArrayList<Worker> workers) {
 		this.setPreferredSize(new Dimension(425, 450));
 		this.workerTabs = new ArrayList<JPanel>();
+        this.calendars = new ArrayList<ArrayList<Date>>();
 		initComponents();
 		for (int c = 0; c < workers.size(); c++) {
 			this.addWorker();
@@ -71,6 +80,7 @@ public class WorkerSetup extends javax.swing.JFrame {
 	public WorkerSetup() {
 		this.setPreferredSize(new Dimension(425, 450));
 		this.workerTabs = new ArrayList<JPanel>();
+        this.calendars = new ArrayList<ArrayList<Date>>();
 		initComponents();
 		addWorker();
 	}
@@ -80,6 +90,8 @@ public class WorkerSetup extends javax.swing.JFrame {
 		javax.swing.JTabbedPane tempWorkerDays = new javax.swing.JTabbedPane();
 		javax.swing.JTextField tempWorkerName = new javax.swing.JTextField();
 		javax.swing.JPanel tempWorkerTab = new javax.swing.JPanel();
+
+        this.calendars.add(new ArrayList<Date>());
 
 		// Makes a tab for each day and a check box for each job.
 		for (Day day : this.days) {
@@ -245,6 +257,15 @@ public class WorkerSetup extends javax.swing.JFrame {
 		this.removeButton = new javax.swing.JButton();
 		this.nextButton = new javax.swing.JButton();
 		this.backButton = new javax.swing.JButton();
+        this.calButton = new JButton();
+
+        this.calButton.setText("Select Calendar");
+        this.calButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                fileSelector(evt);
+            }
+        });
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		setTitle("Worker Setup");
@@ -318,15 +339,24 @@ public class WorkerSetup extends javax.swing.JFrame {
 																		javax.swing.GroupLayout.PREFERRED_SIZE,
 																		136,
 																		javax.swing.GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(
-																		javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-																		82,
-																		Short.MAX_VALUE)
+                                                                .addPreferredGap(
+                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                                        2,
+                                                                        Short.MAX_VALUE)
 																.addComponent(
-																		this.removeButton,
-																		javax.swing.GroupLayout.PREFERRED_SIZE,
-																		136,
-																		javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                        this.calButton,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                        80,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(
+                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                                        2,
+                                                                        Short.MAX_VALUE)
+																.addComponent(
+                                                                        this.removeButton,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                        136,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
 												.addComponent(
 														outside,
 														javax.swing.GroupLayout.PREFERRED_SIZE,
@@ -335,25 +365,26 @@ public class WorkerSetup extends javax.swing.JFrame {
 		layout.setVerticalGroup(layout
 				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGroup(
-						layout.createSequentialGroup()
-								.addComponent(outside,
-										javax.swing.GroupLayout.PREFERRED_SIZE,
-										330,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(
-										javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addGroup(
-										layout.createParallelGroup(
-												javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(this.addButton)
-												.addComponent(this.removeButton))
-								.addGap(18, 18, 18)
-								.addGroup(
-										layout.createParallelGroup(
-												javax.swing.GroupLayout.Alignment.BASELINE)
-												.addComponent(this.nextButton)
-												.addComponent(this.backButton))
-								.addGap(0, 8, Short.MAX_VALUE)));
+                        layout.createSequentialGroup()
+                                .addComponent(outside,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        330,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(
+                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(
+                                        layout.createParallelGroup(
+                                                javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(this.addButton)
+                                                .addComponent(this.calButton)
+                                                .addComponent(this.removeButton))
+                                .addGap(18, 18, 18)
+                                .addGroup(
+                                        layout.createParallelGroup(
+                                                javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(this.nextButton)
+                                                .addComponent(this.backButton))
+                                .addGap(0, 8, Short.MAX_VALUE)));
 
 		pack();
 	}
@@ -393,7 +424,7 @@ public class WorkerSetup extends javax.swing.JFrame {
 				}
 				workerDays.add(new Day(daysPane.getTitleAt(i), jobNames));
 			}
-			workers.add(new Worker(nameArea.getText(), workerDays));
+			workers.add(new Worker(nameArea.getText(), workerDays, calendars.get(getSelectedUser())));
 		}
 		if (allGood) {
 			HTMLGenerator.reset();
@@ -425,13 +456,86 @@ public class WorkerSetup extends javax.swing.JFrame {
 	 * @param evt
 	 */
 	private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        this.calendars.remove(getSelectedUser());
 		this.workerTabs.remove(this.workerTabPanel.getSelectedComponent());
 		this.workerTabPanel.remove(this.workerTabPanel.getSelectedIndex());
 	}
+
+    private void fileSelector(ActionEvent evt){
+        JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter(
+                "iCal", "ics");
+        chooser.setFileFilter(filter);
+        int returnVal = chooser.showOpenDialog(null);
+        if(returnVal == JFileChooser.APPROVE_OPTION) {
+            addCalToUser(chooser.getSelectedFile());
+        }
+    }
+
+    private void addCalToUser(File selectedFile){
+        String[] data = readFileAsString(selectedFile.getAbsolutePath()).split("\n");
+
+        for(int line = 0; line < data.length; line++){
+            if(data[line].contains("BEGIN:VEVENT")){
+                Date d = processVEvent(line, data);
+                if(d != null) calendars.get(getSelectedUser()).add(d);
+            }
+        }
+    }
+
+    private Date processVEvent(int line, String[] data) {
+        for(; line < data.length; line++){
+            if(data[line].contains("END:VEVENT")){
+                return null;
+            } else if(data[line].contains("DTSTART") || data[line].contains("DTEND")){
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+                try {
+                    return formatter.parse(data[line].split(":")[1].split("T")[0]);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
+    }
+
+    private int getSelectedUser(){
+        return this.workerTabPanel.getSelectedIndex();
+    }
+
+    /**
+     * Reads a file into a String
+     *
+     * @author Frank Roetker
+     *
+     * @param filename
+     *            name of the file
+     * @return contents of the file as a String
+     */
+    public static String readFileAsString(String filename) {
+        StringBuffer fileData = new StringBuffer(1000);
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            char[] buf = new char[1024];
+            int numRead = 0;
+            while ((numRead = reader.read(buf)) != -1) {
+                String readData = String.valueOf(buf, 0, numRead);
+                fileData.append(readData);
+                buf = new char[1024];
+            }
+            reader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return fileData.toString();
+    }
 
 	private javax.swing.JButton addButton;
 	private javax.swing.JButton backButton;
 	private javax.swing.JButton nextButton;
 	private javax.swing.JButton removeButton;
+    private JButton calButton;
 	private javax.swing.JTabbedPane workerTabPanel;
 }
