@@ -1,6 +1,6 @@
 package scheduleGenerator;
 
-import java.awt.Dimension;
+import java.awt.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -339,6 +339,9 @@ public class CalendarGUI extends javax.swing.JFrame {
 		setTitle("Calendar");
 
 		this.monthTitle.setFont(new java.awt.Font("Tahoma", 1, 24));
+        // SWAP 1, TEAM 2
+        //ADDITIONAL FEATURE
+        this.monthTitle.setMinimumSize(new Dimension(250, 40));
 		this.monthTitle.setText("Month Name Here");
 
 		this.previousMonthButton.setText("<");

@@ -468,6 +468,7 @@ public class WorkerSetup extends javax.swing.JFrame {
 		this.workerTabPanel.remove(this.workerTabPanel.getSelectedIndex());
 	}
 
+    // SWAP 1, TEAM 2
     private void fileSelector(ActionEvent evt){
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
@@ -479,6 +480,7 @@ public class WorkerSetup extends javax.swing.JFrame {
         }
     }
 
+    // SWAP 1, TEAM 2
     private void addCalToUser(File selectedFile){
         String[] data = readFileAsString(selectedFile.getAbsolutePath()).split("\n");
 
@@ -490,6 +492,7 @@ public class WorkerSetup extends javax.swing.JFrame {
         }
     }
 
+    // SWAP 1, TEAM 2
     private Date processVEvent(int line, String[] data) {
         for(; line < data.length; line++){
             if(data[line].contains("END:VEVENT")){
@@ -506,6 +509,7 @@ public class WorkerSetup extends javax.swing.JFrame {
         return null;
     }
 
+    // SWAP 1, TEAM 2
     private int getSelectedUser(){
         return this.workerTabPanel.getSelectedIndex();
     }

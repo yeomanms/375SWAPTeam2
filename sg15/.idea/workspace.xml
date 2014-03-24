@@ -4,7 +4,7 @@
     <list default="true" id="bec51b06-b22a-4c60-a9e8-657ee38d3dc4" name="Default" comment="" />
     <ignored path="SWAP.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/CalendarGUI.java" changelist="bec51b06-b22a-4c60-a9e8-657ee38d3dc4" time="1395623883836" ignored="false" />
+    <file path="/CalendarGUI.java" changelist="bec51b06-b22a-4c60-a9e8-657ee38d3dc4" time="1395635022541" ignored="false" />
     <file path="/fragment.java" changelist="bec51b06-b22a-4c60-a9e8-657ee38d3dc4" time="1395599531568" ignored="false" />
     <file path="/Dummy.txt" changelist="bec51b06-b22a-4c60-a9e8-657ee38d3dc4" time="1395609088271" ignored="false" />
     <file path="/Main.java" changelist="bec51b06-b22a-4c60-a9e8-657ee38d3dc4" time="1395599520146" ignored="false" />
@@ -90,110 +90,15 @@
     <favorites_list name="SWAP" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="CalendarGUI.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/CalendarGUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="205" column="13" selection-start="5997" selection-end="5997" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#10255#10424#0" expanded="true" />
-                <element signature="e#10417#10418#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Config.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="272" column="10" selection-start="14385" selection-end="14387" vertical-scroll-proportion="-7.16">
-              <folding>
-                <element signature="e#383#412#0" expanded="true" />
-                <element signature="e#531#561#0" expanded="true" />
-                <element signature="e#1238#1267#0" expanded="true" />
-                <element signature="e#3307#3503#0" expanded="true" />
-                <element signature="e#3492#3493#0" expanded="true" />
-                <element signature="e#8288#8318#0" expanded="true" />
-                <element signature="e#14559#14567#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Day.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Day.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="0" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HTMLGenerator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/HTMLGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="13" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="13" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Schedule.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Schedule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="77" selection-start="5457" selection-end="5457" vertical-scroll-proportion="0.7465278">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2147#2156#0" expanded="true" />
-                <element signature="e#3286#3302#0" expanded="true" />
-                <element signature="e#3362#3370#0" expanded="true" />
-                <element signature="e#3546#3554#0" expanded="true" />
-                <element signature="e#5515#5523#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Worker.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Worker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="0" selection-start="2022" selection-end="2022" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#469#475#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkerSetup.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/WorkerSetup.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="490" column="16" selection-start="17289" selection-end="17351" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#8319#8481#0" expanded="true" />
-                <element signature="e#8470#8471#0" expanded="true" />
-                <element signature="e#8660#8819#0" expanded="true" />
-                <element signature="e#8814#8815#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitLogSettings">
     <option name="myDateState">
@@ -206,11 +111,11 @@
         <option value="$PROJECT_DIR$/src/scheduleGenerator/Main.java" />
         <option value="$PROJECT_DIR$/src/scheduleGenerator/Day.java" />
         <option value="$PROJECT_DIR$/src/scheduleGenerator/WorkerCalendar.java" />
-        <option value="$PROJECT_DIR$/src/scheduleGenerator/CalendarGUI.java" />
         <option value="$PROJECT_DIR$/src/scheduleGenerator/Config.java" />
+        <option value="$PROJECT_DIR$/src/scheduleGenerator/Schedule.java" />
+        <option value="$PROJECT_DIR$/src/scheduleGenerator/CalendarGUI.java" />
         <option value="$PROJECT_DIR$/src/scheduleGenerator/WorkerSetup.java" />
         <option value="$PROJECT_DIR$/src/scheduleGenerator/Worker.java" />
-        <option value="$PROJECT_DIR$/src/scheduleGenerator/Schedule.java" />
       </list>
     </option>
   </component>
@@ -469,15 +374,15 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2594655" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.6703786" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.155902" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.9988864" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -634,16 +539,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Worker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="21" selection-start="1985" selection-end="1985" vertical-scroll-proportion="0.79357797">
+          <folding>
+            <element signature="e#469#475#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Day.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.0">
+        <state line="70" column="4" selection-start="1128" selection-end="1145" vertical-scroll-proportion="0.43463302">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="272" column="10" selection-start="14385" selection-end="14387" vertical-scroll-proportion="-7.16">
+        <state line="272" column="8" selection-start="14385" selection-end="14385" vertical-scroll-proportion="5.0069847">
           <folding>
             <element signature="e#383#412#0" expanded="true" />
             <element signature="e#531#561#0" expanded="true" />
@@ -658,38 +572,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/CalendarGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="205" column="13" selection-start="5997" selection-end="5997" vertical-scroll-proportion="0.0">
+        <state line="343" column="0" selection-start="10041" selection-end="10041" vertical-scroll-proportion="6.4529815">
           <folding>
-            <element signature="e#10255#10424#0" expanded="true" />
-            <element signature="e#10417#10418#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/WorkerSetup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="490" column="16" selection-start="17289" selection-end="17351" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#8319#8481#0" expanded="true" />
-            <element signature="e#8470#8471#0" expanded="true" />
-            <element signature="e#8660#8819#0" expanded="true" />
-            <element signature="e#8814#8815#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Worker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="0" selection-start="2022" selection-end="2022" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#469#475#0" expanded="true" />
+            <element signature="e#672#699#0" expanded="true" />
+            <element signature="e#10393#10562#0" expanded="true" />
+            <element signature="e#10555#10556#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Schedule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="77" selection-start="5457" selection-end="5457" vertical-scroll-proportion="0.7465278">
+        <state line="160" column="33" selection-start="5209" selection-end="5209" vertical-scroll-proportion="0.33715597">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2147#2156#0" expanded="true" />
@@ -697,6 +591,18 @@
             <element signature="e#3362#3370#0" expanded="true" />
             <element signature="e#3546#3554#0" expanded="true" />
             <element signature="e#5515#5523#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/WorkerSetup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="463" column="21" selection-start="16208" selection-end="16208" vertical-scroll-proportion="8.332569">
+          <folding>
+            <element signature="e#8319#8481#0" expanded="true" />
+            <element signature="e#8470#8471#0" expanded="true" />
+            <element signature="e#8660#8819#0" expanded="true" />
+            <element signature="e#8814#8815#0" expanded="true" />
           </folding>
         </state>
       </provider>

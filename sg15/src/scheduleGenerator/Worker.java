@@ -103,6 +103,7 @@ public class Worker implements Serializable{
 		this.days.add(d);
 	}
 
+    // SWAP 1, TEAM 2
     // QUALITY CHANGES
     public boolean isBusy(Date d){
         return busy.contains(d);
