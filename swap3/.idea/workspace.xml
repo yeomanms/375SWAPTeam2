@@ -14,6 +14,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Planning/Cycle 4 Status Report.txt" afterPath="$PROJECT_DIR$/Planning/Cycle 4 Status Report.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Planning/Cycle 4 User Stories.txt" afterPath="$PROJECT_DIR$/Planning/Cycle 4 User Stories.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scheduleGenerator/Day.java" afterPath="$PROJECT_DIR$/src/scheduleGenerator/Day.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scheduleGenerator/HTMLGenerator.java" afterPath="$PROJECT_DIR$/src/scheduleGenerator/HTMLGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scheduleGenerator/Main.java" afterPath="$PROJECT_DIR$/src/scheduleGenerator/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scheduleGenerator/Schedule.java" afterPath="$PROJECT_DIR$/src/scheduleGenerator/Schedule.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scheduleGenerator/Worker.java" afterPath="$PROJECT_DIR$/src/scheduleGenerator/Worker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scheduleGenerator/WorkerSetup.java" afterPath="$PROJECT_DIR$/src/scheduleGenerator/WorkerSetup.java" />
@@ -109,10 +111,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CalendarGUI.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CalendarGUI.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/CalendarGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="25" selection-start="1285" selection-end="1290" vertical-scroll-proportion="0.0">
+            <state line="633" column="44" selection-start="25922" selection-end="25922" vertical-scroll-proportion="0.33333334">
               <folding />
             </state>
           </provider>
@@ -121,7 +123,7 @@
       <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="305" column="9" selection-start="16742" selection-end="16742" vertical-scroll-proportion="0.0">
+            <state line="305" column="9" selection-start="14781" selection-end="14781" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -130,16 +132,43 @@
       <file leaf-file-name="Day.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Day.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="21" selection-start="126" selection-end="131" vertical-scroll-proportion="0.0">
+            <state line="5" column="3" selection-start="126" selection-end="131" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Schedule.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Schedule.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="190" column="33" selection-start="6252" selection-end="6252" vertical-scroll-proportion="0.019495413">
+            <state line="190" column="23" selection-start="6014" selection-end="6014" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractSchedule.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/AbstractSchedule.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="42" selection-start="918" selection-end="918" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorkerComparator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/WorkerComparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="13" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorkerPreferenceSchedule.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/WorkerPreferenceSchedule.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="2" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -148,7 +177,7 @@
       <file leaf-file-name="Worker.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Worker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="27" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0">
+            <state line="6" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -157,7 +186,7 @@
       <file leaf-file-name="WorkerSetup.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/WorkerSetup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="41" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0">
+            <state line="22" column="0" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -215,6 +244,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -233,7 +263,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="swap2" />
+              <option name="myItemId" value="swap3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -243,7 +273,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="swap2" />
+              <option name="myItemId" value="swap3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -257,7 +287,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -408,16 +437,16 @@
     <option name="myMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="D:\Workspace\SWAP\375SWAPTeam2\swap2" />
-          <option name="myCopyRoot" value="D:\Workspace\SWAP\375SWAPTeam2\swap2" />
+          <option name="myVcsRoot" value="D:\Workspace\SWAP\375SWAPTeam2\swap3" />
+          <option name="myCopyRoot" value="D:\Workspace\SWAP\375SWAPTeam2\swap3" />
         </SvnCopyRootSimple>
       </list>
     </option>
     <option name="myMoreRealMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="D:\Workspace\SWAP\375SWAPTeam2\swap2" />
-          <option name="myCopyRoot" value="D:\Workspace\SWAP\375SWAPTeam2\swap2" />
+          <option name="myVcsRoot" value="D:\Workspace\SWAP\375SWAPTeam2\swap3" />
+          <option name="myCopyRoot" value="D:\Workspace\SWAP\375SWAPTeam2\swap3" />
         </SvnCopyRootSimple>
       </list>
     </option>
@@ -432,7 +461,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -444,14 +473,14 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21237993" sideWeight="0.6703786" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21237993" sideWeight="0.6703786" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -522,27 +551,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Day.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="25" selection-start="615" selection-end="618" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Schedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="73" selection-start="6189" selection-end="6189" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="18" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0">
@@ -585,28 +593,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/WorkerSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="41" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0">
+        <state line="22" column="0" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="27" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/CalendarGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="25" selection-start="1285" selection-end="1290" vertical-scroll-proportion="0.0">
+        <state line="6" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Day.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="21" selection-start="126" selection-end="131" vertical-scroll-proportion="0.0">
+        <state line="5" column="3" selection-start="126" selection-end="131" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -618,14 +619,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="305" column="9" selection-start="16742" selection-end="16742" vertical-scroll-proportion="0.0">
+        <state line="305" column="9" selection-start="14781" selection-end="14781" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/Schedule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="190" column="33" selection-start="6252" selection-end="6252" vertical-scroll-proportion="0.019495413">
+        <state line="190" column="23" selection-start="6014" selection-end="6014" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/WorkerPreferenceSchedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="2" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/WorkerComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/AbstractSchedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="42" selection-start="918" selection-end="918" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scheduleGenerator/CalendarGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="633" column="44" selection-start="25922" selection-end="25922" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
