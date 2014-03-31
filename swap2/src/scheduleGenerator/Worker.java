@@ -1,5 +1,8 @@
 package scheduleGenerator;
 //SWAP11 TEAM01 SMELL Lazy class - Doesn't do much beyond store data.
+// SWAP 1, TEAM 2
+// REJECTING BAD SMELL FOR ENHANCEMENT.
+// True, this is a lazy class, however it is needed for serialization.
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,9 +22,7 @@ public class Worker implements Serializable{
 	/**
 	 * Builds a worker with available days.
 	 * @param name 
-	 * @param days 
-	 *
-	 * @param jobs
+	 * @param days
 	 */
 	public Worker(String name, ArrayList<Day> days)
 	{

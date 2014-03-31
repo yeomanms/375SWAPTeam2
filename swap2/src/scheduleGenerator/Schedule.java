@@ -113,13 +113,8 @@ public class Schedule extends Thread implements Serializable {
 					//moved into the jobsInOrderLoop method.
 
 					ArrayList<String> jobsInOrder = day.getJobs();
-
-					// Used for html later
-
 					daysInMonth++;
 					numOfJobs.add(jobsInOrder.size());
-
-					//
 					jobsInOrderLoop(jobsInOrder, day, jobsWithWorker);
 
 					String date = this.cal.get(Calendar.YEAR)
@@ -149,12 +144,6 @@ public class Schedule extends Thread implements Serializable {
 	/**
 	 * SWAP1 TEAM 01 QUALITY CHANGE REPLACED BIG SEGMENT OF CODE WITH THIS NEW
 	 * METHOD METHOD
-	 * 
-	 * @param jobsInOrder
-	 * @param day
-	 * @param workersWorking
-	 * @param workersForJob
-	 * @param jobsWithWorker
 	 */
 	// SWAP1 Team01 SMELL: Temporary Field (workersWorking): Doesn't
 	// always get used. Make a home for this orphaned variable.
@@ -241,24 +230,10 @@ public class Schedule extends Thread implements Serializable {
 
 	// SWAP1 Team01 SMELL: Speculative Generality. Clogs up code with big
 	// comments.
-	// /**
-	// * Returns the month/day/year of next date with the name of day.
-	// *
-	// * @param nameOfDay
-	// * @return string of year/month/day format
-	// */
-	// private String getNextDate(String nameOfDay) {
-	// int dayNum = numForName(nameOfDay);
-	// GregorianCalendar tempCal = (GregorianCalendar) this.cal.clone();
-	//
-	// tempCal.add(Calendar.DATE, 1);
-	// while (tempCal.get(Calendar.DAY_OF_WEEK) != dayNum) {
-	// tempCal.add(Calendar.DATE, 1);
-	// }
-	// return String.valueOf(tempCal.get(Calendar.YEAR)) + "/" +
-	// String.valueOf(tempCal.get(Calendar.MONTH)) + "/"
-	// + String.valueOf(tempCal.get(Calendar.DAY_OF_MONTH));
-	// }
+
+    // SWAP2 Team2
+    // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
+    // Removed the comments that were unneeded.
 
 	/**
 	 * Returns the schedule.

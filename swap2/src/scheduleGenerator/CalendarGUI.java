@@ -1,5 +1,6 @@
 package scheduleGenerator;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -46,54 +47,28 @@ public class CalendarGUI extends javax.swing.JFrame {
 		this.fillTableForThisMonth();
 	}
 
-	private void setTitleMonth(int n, int year) {
-		//SWAP 1 TEAM01 SMELL: Switch statement. Self-explanatory
-		switch (n) {
-		//SWAP 1, TEAM 01: We added a call to our method "setMonthName" below QUALITY CHANGE 1
-		case (1):
-			setMonthName("January", year);
-			break;
-		case (2):
-			setMonthName("February", year);
-			break;
-		case (3):
-			setMonthName("March", year);
-			break;
-		case (4):
-			setMonthName("April", year);
-			break;
-		case (5):
-			setMonthName("May", year);
-			break;
-		case (6):
-			setMonthName("June", year);
-			break;
-		case (7):
-			setMonthName("July", year);
-			break;
-		case (8):
-			setMonthName("August", year);
-			break;
-		case (9):
-			setMonthName("September", year);
-			break;
-		case (10):
-			setMonthName("October", year);
-			break;
-		case (11):
-			setMonthName("November", year);
-			break;
-		case (12):
-			setMonthName("December", year);
-			break;
-		}
-	}
-	
-	//Swap 1, TEAM 01 Added a method to remove duplicate code in the above switch statement QUALITY CHANGE 1
-	private void setMonthName(String month, int year){
-		this.monthTitle.setText(month + " " + year);
-		this.monthName = (month + " " + year);
-	}
+    //SWAP 1 TEAM01 SMELL: Switch statement. Self-explanatory
+    // SWAP 1, TEAM 2
+    // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
+    // Removed switch statement, reducing the size of the setTitleMonth method.
+    private void setTitleMonth(int n, int year) {
+        String title = String.format("%s %s", MonthInYear(n) , year);
+        this.monthTitle.setText(this.monthName = title);
+        this.monthTitle.setMinimumSize(new Dimension(100, 100));
+        this.monthName = title;
+    }
+
+    // SWAP 1, TEAM 2
+    // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
+    // Added a helper method for getting the month name.
+    private String MonthInYear(int n) {
+        return new String[]{
+                "January", "February", "March", "April",
+                "May", "June", "July", "August", "September",
+                "October", "November", "December"
+        }[n-1];
+    }
+
     //Swap 1, TEAM 01 Added a method to reduce duplicate code QUALITY CHANGE 2
 	private String makeNumDate(int month, int day, int year){
 	String numDate = String.format("%02d",

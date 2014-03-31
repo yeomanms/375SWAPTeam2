@@ -79,6 +79,9 @@ public class WorkerSetup extends javax.swing.JFrame {
 
 	// SWAP1 TEAM01 SMELL: Comments. There are too many comments here so maybe
 	// split up the method into the subroutines the comments suggest.
+    // SWAP 1, TEAM 2
+    // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
+    // Breaking up the method into subroutines
 	private void addWorker() {
 		this.days = Main.getDays();
 		javax.swing.JTabbedPane tempWorkerDays = new javax.swing.JTabbedPane();
@@ -91,142 +94,16 @@ public class WorkerSetup extends javax.swing.JFrame {
 			for (int i = 0; i < day.getJobs().size(); i++) {
 				jobs[i] = new JCheckBox(day.getJobs().get(i));
 			}
-
-			// Put Check Boxes in a scrollPane for dynamics
 			JScrollPane tempDayJobPane = new JScrollPane();
-			JPanel tempPanel = new JPanel();
-			tempPanel.setLayout(new GridLayout(jobs.length, 1));
+            JLabel jobLabel = new JLabel("Preferred Jobs:");
 
-			for (JCheckBox job : jobs) {
-				tempPanel.add(job);
-			}
-			tempDayJobPane.setViewportView(tempPanel);
-
-			// Label the Pane
-			JLabel jobLabel = new JLabel("Preferred Jobs:");
-
-			// Create a tab Panel for the Worker Tab and add the inputs.
-
-			JPanel dayTab = new JPanel();
-
-			// Set veritcal and horizontal layouts.
-			javax.swing.GroupLayout sundayTab1Layout = new javax.swing.GroupLayout(
-					dayTab);
-			dayTab.setLayout(sundayTab1Layout);
-			sundayTab1Layout
-					.setHorizontalGroup(sundayTab1Layout
-							.createParallelGroup(
-									javax.swing.GroupLayout.Alignment.LEADING)
-							.addGroup(
-									sundayTab1Layout
-											.createSequentialGroup()
-											.addGap(63, 63, 63)
-											.addGroup(
-													sundayTab1Layout
-															.createParallelGroup(
-																	javax.swing.GroupLayout.Alignment.LEADING)
-															.addComponent(
-																	tempDayJobPane,
-																	javax.swing.GroupLayout.PREFERRED_SIZE,
-																	198,
-																	javax.swing.GroupLayout.PREFERRED_SIZE)
-															.addComponent(
-																	jobLabel))
-											.addContainerGap(73,
-													Short.MAX_VALUE)));
-
-			sundayTab1Layout
-					.setVerticalGroup(sundayTab1Layout
-							.createParallelGroup(
-									javax.swing.GroupLayout.Alignment.LEADING)
-							.addGroup(
-									sundayTab1Layout
-											.createSequentialGroup()
-											.addContainerGap()
-											.addComponent(jobLabel)
-											.addPreferredGap(
-													javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-											.addComponent(
-													tempDayJobPane,
-													javax.swing.GroupLayout.DEFAULT_SIZE,
-													179, Short.MAX_VALUE)
-											.addContainerGap()));
-
-			tempWorkerDays.addTab(day.getNameOfDay(), dayTab);
+            addCheckBoxesToScrollPane(jobs, tempDayJobPane);
+            createTabPanelForWorkerTab(tempWorkerDays, day, tempDayJobPane, jobLabel);
 
 		}
 
-		// Add a section for the worker's name
-		JLabel workerNameLabel = new JLabel("Worker's Name:");
+        addWorkerNameArea(tempWorkerDays, tempWorkerName, tempWorkerTab);
 
-		javax.swing.GroupLayout workerTab1Layout = new javax.swing.GroupLayout(
-				tempWorkerTab);
-		tempWorkerTab.setLayout(workerTab1Layout);
-		workerTab1Layout
-				.setHorizontalGroup(workerTab1Layout
-						.createParallelGroup(
-								javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(
-								workerTab1Layout
-										.createSequentialGroup()
-										.addContainerGap()
-										.addGroup(
-												workerTab1Layout
-														.createParallelGroup(
-																javax.swing.GroupLayout.Alignment.LEADING)
-														.addComponent(
-																tempWorkerDays)
-														.addGroup(
-																javax.swing.GroupLayout.Alignment.TRAILING,
-																workerTab1Layout
-																		.createSequentialGroup()
-																		.addGap(0,
-																				0,
-																				Short.MAX_VALUE)
-																		.addComponent(
-																				workerNameLabel)
-																		.addPreferredGap(
-																				javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-																		.addComponent(
-																				tempWorkerName,
-																				javax.swing.GroupLayout.PREFERRED_SIZE,
-																				150,
-																				javax.swing.GroupLayout.PREFERRED_SIZE)
-																		.addGap(49,
-																				49,
-																				49)))
-										.addContainerGap()));
-
-		// Adds text area and label for name then tab area for days.
-		workerTab1Layout
-				.setVerticalGroup(workerTab1Layout
-						.createParallelGroup(
-								javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(
-								workerTab1Layout
-										.createSequentialGroup()
-										.addContainerGap()
-										.addGroup(
-												workerTab1Layout
-														.createParallelGroup(
-																javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(
-																workerNameLabel)
-														.addComponent(
-																tempWorkerName,
-																javax.swing.GroupLayout.PREFERRED_SIZE,
-																javax.swing.GroupLayout.DEFAULT_SIZE,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(
-												javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(
-												tempWorkerDays,
-												javax.swing.GroupLayout.PREFERRED_SIZE,
-												249,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addContainerGap(
-												javax.swing.GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)));
 		// Prevents a nullPointer
 		if (this.workerTabs.size() == 0) {
 			this.workerTabs.add(tempWorkerTab);
@@ -239,7 +116,144 @@ public class WorkerSetup extends javax.swing.JFrame {
 		}
 	}
 
-	/**
+    // SWAP 1, TEAM 2
+    // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
+    private void addWorkerNameArea(JTabbedPane tempWorkerDays, JTextField tempWorkerName, JPanel tempWorkerTab) {
+        JLabel workerNameLabel = new JLabel("Worker's Name:");
+
+        GroupLayout workerTab1Layout = new GroupLayout(
+                tempWorkerTab);
+        tempWorkerTab.setLayout(workerTab1Layout);
+        workerTab1Layout
+                .setHorizontalGroup(workerTab1Layout
+                        .createParallelGroup(
+                                GroupLayout.Alignment.LEADING)
+                        .addGroup(
+                                workerTab1Layout
+                                        .createSequentialGroup()
+                                        .addContainerGap()
+                                        .addGroup(
+                                                workerTab1Layout
+                                                        .createParallelGroup(
+                                                                GroupLayout.Alignment.LEADING)
+                                                        .addComponent(
+                                                                tempWorkerDays)
+                                                        .addGroup(
+                                                                GroupLayout.Alignment.TRAILING,
+                                                                workerTab1Layout
+                                                                        .createSequentialGroup()
+                                                                        .addGap(0,
+                                                                                0,
+                                                                                Short.MAX_VALUE)
+                                                                        .addComponent(
+                                                                                workerNameLabel)
+                                                                        .addPreferredGap(
+                                                                                LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                        .addComponent(
+                                                                                tempWorkerName,
+                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                150,
+                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                        .addGap(49,
+                                                                                49,
+                                                                                49)))
+                                        .addContainerGap()));
+
+        workerTab1Layout
+                .setVerticalGroup(workerTab1Layout
+                        .createParallelGroup(
+                                GroupLayout.Alignment.LEADING)
+                        .addGroup(
+                                workerTab1Layout
+                                        .createSequentialGroup()
+                                        .addContainerGap()
+                                        .addGroup(
+                                                workerTab1Layout
+                                                        .createParallelGroup(
+                                                                GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(
+                                                                workerNameLabel)
+                                                        .addComponent(
+                                                                tempWorkerName,
+                                                                GroupLayout.PREFERRED_SIZE,
+                                                                GroupLayout.DEFAULT_SIZE,
+                                                                GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(
+                                                LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(
+                                                tempWorkerDays,
+                                                GroupLayout.PREFERRED_SIZE,
+                                                249,
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap(
+                                                GroupLayout.DEFAULT_SIZE,
+                                                Short.MAX_VALUE)));
+    }
+
+    // SWAP 1, TEAM 2
+    // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
+    private void createTabPanelForWorkerTab(JTabbedPane tempWorkerDays, Day day, JScrollPane tempDayJobPane, JLabel jobLabel) {
+        JPanel dayTab = new JPanel();
+
+        // Set vertical and horizontal layouts.
+        GroupLayout sundayTab1Layout = new GroupLayout(
+                dayTab);
+        dayTab.setLayout(sundayTab1Layout);
+        sundayTab1Layout
+                .setHorizontalGroup(sundayTab1Layout
+                        .createParallelGroup(
+                                GroupLayout.Alignment.LEADING)
+                        .addGroup(
+                                sundayTab1Layout
+                                        .createSequentialGroup()
+                                        .addGap(63, 63, 63)
+                                        .addGroup(
+                                                sundayTab1Layout
+                                                        .createParallelGroup(
+                                                                GroupLayout.Alignment.LEADING)
+                                                        .addComponent(
+                                                                tempDayJobPane,
+                                                                GroupLayout.PREFERRED_SIZE,
+                                                                198,
+                                                                GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(
+                                                                jobLabel))
+                                        .addContainerGap(73,
+                                                Short.MAX_VALUE)));
+
+        sundayTab1Layout
+                .setVerticalGroup(sundayTab1Layout
+                        .createParallelGroup(
+                                GroupLayout.Alignment.LEADING)
+                        .addGroup(
+                                sundayTab1Layout
+                                        .createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jobLabel)
+                                        .addPreferredGap(
+                                                LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(
+                                                tempDayJobPane,
+                                                GroupLayout.DEFAULT_SIZE,
+                                                179, Short.MAX_VALUE)
+                                        .addContainerGap()));
+
+        tempWorkerDays.addTab(day.getNameOfDay(), dayTab);
+    }
+
+    // SWAP 1, TEAM 2
+    // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
+    private void addCheckBoxesToScrollPane(JCheckBox[] jobs, JScrollPane tempDayJobPane) {
+        JPanel tempPanel = new JPanel();
+        tempPanel.setLayout(new GridLayout(jobs.length, 1));
+
+        for (JCheckBox job : jobs) {
+            tempPanel.add(job);
+        }
+        tempDayJobPane.setViewportView(tempPanel);
+    }
+
+    /**
 	 * This method is called from within the constructor to initialize the form.
 	 */
 	private void initComponents() {
