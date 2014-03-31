@@ -109,9 +109,6 @@ public class Schedule extends Thread implements Serializable {
 						.getNameOfDay())) {
 
 					TreeMap<String, Worker> jobsWithWorker = new TreeMap<String, Worker>();
-					//SWAP1 Team01 ADDITIONAL FEATURE: Removed field workersWorking,
-					//moved into the jobsInOrderLoop method.
-
 					ArrayList<String> jobsInOrder = day.getJobs();
 					daysInMonth++;
 					numOfJobs.add(jobsInOrder.size());
@@ -147,68 +144,90 @@ public class Schedule extends Thread implements Serializable {
 	 */
 	// SWAP1 Team01 SMELL: Temporary Field (workersWorking): Doesn't
 	// always get used. Make a home for this orphaned variable.
+    // SWAP 1, TEAM 2
+    // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
+    // workersWorking is now used unless there is an empty job
 	public void jobsInOrderLoop(ArrayList<String> jobsInOrder, Day day,
 			TreeMap<String, Worker> jobsWithWorker) {
-		//SWAP1 Team01 ADDITIONAL FEATURE: field workersWorking now
-		//a variable of the jobsInOrderLoop method.
 		ArrayList<String> workersWorking = new ArrayList<String>();
 		for (String job : jobsInOrder) {
 			ArrayList<Worker> workersForJob = new ArrayList<Worker>();
 			ArrayList<Worker> workersForJobForced = new ArrayList<Worker>();
 
-			for (Worker worker : this.workerIndices.get(this.numForName(day
-					.getNameOfDay()))) {
-				Day workerDay = worker.getDayWithName(day.getNameOfDay());
-				//SWAP1 Team01 ADDITIONAL FEATURE: Populated additional worker list
-				//here of workers that aren't doing anything.
-				if (!workersWorking.contains(worker.getName())) {
-					workersForJobForced.add(worker);
-					if (workerDay.getJobs().contains(job)) {
-						workersForJob.add(worker);
-					}
-				}
-			}
-			
-			if (workersForJob.size() > 0) {
-				Worker workerForJob = workersForJob.get(new Random()
-					.nextInt(workersForJob.size()));
-				//SWAP1 Team01 BONUS FEATURE: Ability to schedule each person 
-				//no more than once for a particular role before everybody who desires 
-				//to perform that role is scheduled to do so. 
-				//
-				//Compares each worker's stored numWorkedFor information and will
-				//switch workers if someone else has worked the job less.
-				for (Worker w : workersForJob) {
-					if (w.numWorkedForJob(job) < workerForJob
-							.numWorkedForJob(job)) {
-						workerForJob = w;
-					}
-				}
-				jobsWithWorker.put(job, workerForJob);
-				workersWorking.add(workerForJob.getName());
-				workerForJob.addWorkedJob(job);
-			} else {
-				//SWAP1 Team01 ADDITIONAL FEATURE: Schedule now "forces" 
-				//a non-working person to an empty job if possible.
-				//Never leave a job undone.
-				if (workersForJobForced.size() > 0) {
-					Worker workerForJobForced = workersForJobForced.get(new Random()
-						.nextInt(workersForJobForced.size()));
-					jobsWithWorker.put(job, workerForJobForced);
-					workersWorking.add(workerForJobForced.getName());
-				} else {
-					jobsWithWorker.put(job, new Worker("Empty",
-							new ArrayList<Day>()));
-					JOptionPane.showMessageDialog(new JFrame(),
-							"No workers are able to work as a(n) " + job + " on "
-									+ day.getNameOfDay());
-					this.workerForEveryJob = false;
-				}
-			}
+            populateIfNoWorkersWorking(day, workersWorking, job, workersForJob, workersForJobForced);
+
+            if (workersForJob.size() > 0) {
+                PrepareWorkersForJob(jobsWithWorker, workersWorking, job, workersForJob);
+                continue;
+            }
+            PrepareForcedWorkersForJob(day, jobsWithWorker, workersWorking, job, workersForJobForced);
 		}
 	}
 
-	private int numForName(String nameOfDay) {
+    // SWAP 1, TEAM 2
+    // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
+    // Refactored out this method
+    private void PrepareForcedWorkersForJob(Day day, TreeMap<String, Worker> jobsWithWorker, ArrayList<String> workersWorking, String job, ArrayList<Worker> workersForJobForced) {
+        //SWAP1 Team01 ADDITIONAL FEATURE: Schedule now "forces"
+        //a non-working person to an empty job if possible.
+        //Never leave a job undone.
+        if (workersForJobForced.size() > 0) {
+            Worker workerForJobForced = workersForJobForced.get(new Random()
+                .nextInt(workersForJobForced.size()));
+            jobsWithWorker.put(job, workerForJobForced);
+            workersWorking.add(workerForJobForced.getName());
+        } else {
+            jobsWithWorker.put(job, new Worker("Empty",
+                    new ArrayList<Day>()));
+            JOptionPane.showMessageDialog(new JFrame(),
+                    "No workers are able to work as a(n) " + job + " on "
+                            + day.getNameOfDay());
+            this.workerForEveryJob = false;
+        }
+    }
+
+    // SWAP 1, TEAM 2
+    // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
+    // Refactored out this method
+    private void PrepareWorkersForJob(TreeMap<String, Worker> jobsWithWorker, ArrayList<String> workersWorking, String job, ArrayList<Worker> workersForJob) {
+        Worker workerForJob = workersForJob.get(new Random()
+            .nextInt(workersForJob.size()));
+        //SWAP1 Team01 BONUS FEATURE: Ability to schedule each person
+        //no more than once for a particular role before everybody who desires
+        //to perform that role is scheduled to do so.
+        //
+        //Compares each worker's stored numWorkedFor information and will
+        //switch workers if someone else has worked the job less.
+        for (Worker w : workersForJob) {
+            if (w.numWorkedForJob(job) < workerForJob
+                    .numWorkedForJob(job)) {
+                workerForJob = w;
+            }
+        }
+        jobsWithWorker.put(job, workerForJob);
+        workersWorking.add(workerForJob.getName());
+        workerForJob.addWorkedJob(job);
+    }
+
+    // SWAP 1, TEAM 2
+    // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
+    // workersWorking is now used unless there is an empty job
+    private void populateIfNoWorkersWorking(Day day, ArrayList<String> workersWorking, String job, ArrayList<Worker> workersForJob, ArrayList<Worker> workersForJobForced) {
+        for (Worker worker : this.workerIndices.get(this.numForName(day
+                .getNameOfDay()))) {
+            Day workerDay = worker.getDayWithName(day.getNameOfDay());
+            //SWAP1 Team01 ADDITIONAL FEATURE: Populated additional worker list
+            //here of workers that aren't doing anything.
+            if (!workersWorking.contains(worker.getName())) {
+                workersForJobForced.add(worker);
+                if (workerDay.getJobs().contains(job)) {
+                    workersForJob.add(worker);
+                }
+            }
+        }
+    }
+
+    private int numForName(String nameOfDay) {
 		int dayNum = 0;
 		if (nameOfDay.equals("Sunday")) {
 			dayNum = 1;
