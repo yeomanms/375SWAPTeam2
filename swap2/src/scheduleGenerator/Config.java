@@ -20,20 +20,19 @@ public class Config extends javax.swing.JFrame {
     private boolean firstSelection = true;
     private int numSelected = 0;
     @SuppressWarnings("rawtypes")
-	private DefaultListModel[] models;
-    
-    
+    private DefaultListModel[] models;
+
+
     /**
      * Used to edit days.
      *
      * @param days
      */
     @SuppressWarnings("unchecked")
-	public Config(ArrayList<Day> days) {
-    	this.models = new DefaultListModel[7];
+    public Config(ArrayList<Day> days) {
+        this.models = new DefaultListModel[7];
         initDyn();
         initComponents();
-
         for(Day day: days) {
             // SWAP 1, TEAM 2
             this.WeekCheck[day.getDayOfWeek()].doClick();
@@ -42,22 +41,22 @@ public class Config extends javax.swing.JFrame {
                 this.models[day.getDayOfWeek()].addElement(job);
                 this.WeekJobList[day.getDayOfWeek()].setModel(this.models[day.getDayOfWeek()]);
             }
-    	}
+        }
     }
-    
+
     /**
      * Creates new form.
      */
     public Config() {
         this.models = new DefaultListModel[7];
         initDyn();
-        
+
         initComponents();
     }
-    
+
     @SuppressWarnings("rawtypes")
-	private void initDyn() {
-    	//SWAP 1 TEAM 01 SMELL: Duplicate code - Look at all those duplicated commands fix that up.
+    private void initDyn() {
+        //SWAP 1 TEAM 01 SMELL: Duplicate code - Look at all those duplicated commands fix that up.
         // SWAP 1, TEAM 2
         // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
         // Removed duplicate code.
@@ -81,7 +80,7 @@ public class Config extends javax.swing.JFrame {
     }
 
     private void initComponents() {
-    	//SWAP1 Team 01 SMELL: Long method. This right here is a long, complicated method. Break it up.
+        //SWAP1 Team 01 SMELL: Long method. This right here is a long, complicated method. Break it up.
         // SWAP 1, TEAM 2
         // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
         // Reduced the size of the method.
@@ -102,6 +101,9 @@ public class Config extends javax.swing.JFrame {
         this.jLabel1 = new javax.swing.JLabel();
         this.nextButton = new javax.swing.JButton();
         this.dayTabs = new javax.swing.JTabbedPane();
+
+        this.jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        this.jLabel1.setText("Days:");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Configuration");
@@ -182,7 +184,6 @@ public class Config extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>
-
 
     /**
      * @param evt
@@ -270,11 +271,10 @@ public class Config extends javax.swing.JFrame {
     }
 
     /**
-	 * @param evt  
-	 */
+     * @param evt
+     */
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {
         ArrayList<Day> days = new ArrayList<Day>();
-        // SWAP 1 Team 2
         for(int i = 0; i < this.WeekCheck.length; i++){
             if(this.WeekCheck[i].isSelected()){
                 ArrayList<Object> day = new ArrayList<Object>();
@@ -305,10 +305,9 @@ public class Config extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "You have not added any days.");
         }
     }
-    
-    
+
     private void stretch() {
-        if(this.numSelected > 0) {
+        if(numSelected() > 0) {
             this.setSize(801, 290);
             this.firstSelection = false;
         } else {
@@ -316,13 +315,24 @@ public class Config extends javax.swing.JFrame {
             this.firstSelection = true;
         }
     }
-    
-    
+
+    // SWAP 1, TEAM 2
+    // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
+    // Added this to get around the streching.
+    private int numSelected(){
+        int j = 0;
+        for(int i = 0; i < WeekCheck.length; i++){
+            if(WeekCheck[i].isSelected()) j++;
+        }
+        return j;
+    }
+
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -344,13 +354,13 @@ public class Config extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
-			public void run() {
+            public void run() {
                 new Config().setVisible(true);
             }
         });
     }
-    
-    
+
+
     //SWAP1 TEAM01 SMELL: Data clumps - These always get passed around together! New objects?
     // SWAP 1, TEAM 2
     // REFACTORING FOR ENHANCEMENT FROM BAD SMELL.
@@ -363,7 +373,6 @@ public class Config extends javax.swing.JFrame {
     private javax.swing.JTextField[] WeekJobName;
     private javax.swing.JLabel[] WeekLabel;
     private javax.swing.JPanel[] WeekTab;
-
 
     private javax.swing.JTabbedPane dayTabs;
     private javax.swing.JLabel jLabel1;
