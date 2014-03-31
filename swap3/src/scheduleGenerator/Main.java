@@ -33,7 +33,7 @@ public class Main {
 	 * Displays schedule.
 	 */
 	static CalendarGUI cal;
-	private static AbstractSchedule schedule;
+	private static Schedule schedule;
 
 	/**
 	 * Program starts here.
@@ -92,7 +92,7 @@ public class Main {
 	 * 
 	 * @return Returns the schedule.
 	 */
-	public static AbstractSchedule getSchedule() {
+	public static Schedule getSchedule() {
 		return Main.schedule;
 	}
 
@@ -102,7 +102,7 @@ public class Main {
 	 * @param schedule
 	 *            The schedule to set.
 	 */
-	public static void setSchedule(AbstractSchedule schedule) {
+	public static void setSchedule(Schedule schedule) {
 		Main.schedule = schedule;
 	}
 
@@ -177,32 +177,16 @@ public class Main {
 	 */
 	@SuppressWarnings("unchecked")
 	public static void recallConfigFile() throws ClassNotFoundException, IOException{
-	    System.out.println(path);
 		if(path.exists()) {
 			FileInputStream recallConfig = new FileInputStream(path);
 			ObjectInputStream fileRecall = new ObjectInputStream(recallConfig);
 			days = (ArrayList<Day>) fileRecall.readObject();
 			workers = (ArrayList<Worker>) fileRecall.readObject();
-			schedule = (AbstractSchedule) fileRecall.readObject();
+			schedule = (Schedule) fileRecall.readObject();
 			HTMLGenerator.setTables((String)fileRecall.readObject());
 			
 			fileRecall.close();
 			recallConfig.close();
 		}
-	}
-	
-	public static void recallChosenConfigFile(String filename, String path) throws IOException, ClassNotFoundException{
-	    File filepath = new File(path + "\\" + filename);
-	    if(filepath.exists()) {
-            FileInputStream recallConfig = new FileInputStream(filepath);
-            ObjectInputStream fileRecall = new ObjectInputStream(recallConfig);
-            days = (ArrayList<Day>) fileRecall.readObject();
-            workers = (ArrayList<Worker>) fileRecall.readObject();
-            schedule = (AbstractSchedule) fileRecall.readObject();
-            HTMLGenerator.setTables((String)fileRecall.readObject());
-            
-            fileRecall.close();
-            recallConfig.close();
-        }
 	}
 }
