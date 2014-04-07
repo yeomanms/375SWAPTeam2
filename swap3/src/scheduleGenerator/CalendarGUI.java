@@ -16,10 +16,7 @@ import java.util.NavigableSet;
 import java.util.Set;
 import java.util.TreeMap;
 
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.SwingConstants;
-import javax.swing.UIManager;
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -81,63 +78,6 @@ public class CalendarGUI extends javax.swing.JFrame {
 		
 		this.monthTitle.setText(monthName + " " + year);
 		this.monthName = monthName + " " + year;
-		
-		
-		// SWAP 1, TEAM 9
-		// QUALITY CHANGES
-		// This large block of code is replaced by the above code, which is much shorter.
-		/*
-		switch (n) {
-		case (1):
-			this.monthTitle.setText("January " + year);
-			this.monthName = "January " + year;
-			break;
-		case (2):
-			this.monthTitle.setText("February " + year);
-			this.monthName = "February " + year;
-			break;
-		case (3):
-			this.monthTitle.setText("March " + year);
-			this.monthName = "March " + year;
-			break;
-		case (4):
-			this.monthTitle.setText("April " + year);
-			this.monthName = "April " + year;
-			break;
-		case (5):
-			this.monthTitle.setText("May " + year);
-			this.monthName = "May " + year;
-			break;
-		case (6):
-			this.monthTitle.setText("June " + year);
-			this.monthName = "June " + year;
-			break;
-		case (7):
-			this.monthTitle.setText("July " + year);
-			this.monthName = "July " + year;
-			break;
-		case (8):
-			this.monthTitle.setText("August " + year);
-			this.monthName = "August " + year;
-			break;
-		case (9):
-			this.monthTitle.setText("September " + year);
-			this.monthName = "September " + year;
-			break;
-		case (10):
-			this.monthTitle.setText("October " + year);
-			this.monthName = "October " + year;
-			break;
-		case (11):
-			this.monthTitle.setText("November " + year);
-			this.monthName = "November " + year;
-			break;
-		case (12):
-			this.monthTitle.setText("December " + year);
-			this.monthName = "December " + year;
-			break;
-		 */
-		
 	}
 
 	/**
@@ -390,23 +330,23 @@ public class CalendarGUI extends javax.swing.JFrame {
 	private void initComponents() {
 
 		this.monthTitle = new javax.swing.JLabel();
-		this.previousMonthButton = new javax.swing.JButton();
-		this.nextMonthButton = new javax.swing.JButton();
-		this.jScrollPane1 = new javax.swing.JScrollPane();
-		this.scheduleTable = new javax.swing.JTable();
-		this.popup = new javax.swing.JPopupMenu();
-		this.menuBar = new javax.swing.JMenuBar();
-		this.fileMenu = new javax.swing.JMenu();
-		this.saveChanges = new javax.swing.JMenuItem();
-		this.editMenu = new javax.swing.JMenu();
-		this.editWorkers = new javax.swing.JMenuItem();
-		this.editDays = new javax.swing.JMenuItem();
-		this.generateMenu = new javax.swing.JMenu();
-		this.genHtml = new javax.swing.JMenuItem();
-		this.generateText = new javax.swing.JMenuItem();
-		this.fontMenu = new javax.swing.JMenu();
-		this.comicMenuItem = new javax.swing.JMenuItem();
-		this.timesMenuItem = new javax.swing.JMenuItem();
+        JButton previousMonthButton = new javax.swing.JButton();
+        JButton nextMonthButton = new javax.swing.JButton();
+        JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
+        JTable scheduleTable = new javax.swing.JTable();
+        JPopupMenu popup = new javax.swing.JPopupMenu();
+        JMenuBar menuBar = new javax.swing.JMenuBar();
+        JMenu fileMenu = new javax.swing.JMenu();
+        JMenuItem saveChanges = new javax.swing.JMenuItem();
+        JMenu editMenu = new javax.swing.JMenu();
+        JMenuItem editWorkers = new javax.swing.JMenuItem();
+        JMenuItem editDays = new javax.swing.JMenuItem();
+        JMenu generateMenu = new javax.swing.JMenu();
+        JMenuItem genHtml = new javax.swing.JMenuItem();
+        JMenuItem generateText = new javax.swing.JMenuItem();
+        JMenu fontMenu = new javax.swing.JMenu();
+        JMenuItem comicMenuItem = new javax.swing.JMenuItem();
+		JMenuItem timesMenuItem = new javax.swing.JMenuItem();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		setTitle("Calendar");
@@ -419,8 +359,8 @@ public class CalendarGUI extends javax.swing.JFrame {
 		// The Month title is also centered in between the previous and next
 		// month buttons
 		this.monthTitle.setHorizontalAlignment(SwingConstants.CENTER);
-		this.previousMonthButton.setText("<");
-		this.previousMonthButton
+		previousMonthButton.setText("<");
+		previousMonthButton
 				.addActionListener(new java.awt.event.ActionListener() {
 					@Override
 					public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -429,8 +369,8 @@ public class CalendarGUI extends javax.swing.JFrame {
 				});
 
 		
-		this.nextMonthButton.setText(">");
-		this.nextMonthButton
+		nextMonthButton.setText(">");
+		nextMonthButton
 				.addActionListener(new java.awt.event.ActionListener() {
 					@Override
 					public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -449,18 +389,18 @@ public class CalendarGUI extends javax.swing.JFrame {
 		for(Worker i:this.schedule.getWorkers())
 		{
 			final Worker input = i;
-			this.popup.add(new JMenuItem(input.getName())).addActionListener(new java.awt.event.ActionListener() {
+			popup.add(new JMenuItem(input.getName())).addActionListener(new java.awt.event.ActionListener() {
 				@Override
 				public void actionPerformed(java.awt.event.ActionEvent evt) {
 					editCell(input);
 				}
 			});
 		}
-		this.scheduleTable.setComponentPopupMenu(this.popup);
+		this.scheduleTable.setComponentPopupMenu(popup);
 		
-		this.jScrollPane1.setViewportView(this.scheduleTable);
+		jScrollPane1.setViewportView(this.scheduleTable);
 
-		this.fileMenu.setText("File");
+		fileMenu.setText("File");
 		
 		// SWAP 1, TEAM 9
 		// QUALITY CHANGES
@@ -471,18 +411,18 @@ public class CalendarGUI extends javax.swing.JFrame {
 				java.awt.event.InputEvent.CTRL_MASK));
 		this.saveChanges.setText("Save Changes");
 		*/
-		acceleratorText(this.saveChanges, java.awt.event.KeyEvent.VK_S, "Save Changes");
-		this.saveChanges.addActionListener(new java.awt.event.ActionListener() {
+		acceleratorText(saveChanges, java.awt.event.KeyEvent.VK_S, "Save Changes");
+		saveChanges.addActionListener(new java.awt.event.ActionListener() {
 			@Override
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				saveChangesActionPerformed(evt);
 			}
 		});
-		this.fileMenu.add(this.saveChanges);
+		fileMenu.add(saveChanges);
 		
-		this.menuBar.add(this.fileMenu);
+		menuBar.add(fileMenu);
 
-		this.editMenu.setText("Edit");
+		editMenu.setText("Edit");
 		
 		// SWAP 1, TEAM 9
 		// QUALITY CHANGES
@@ -493,8 +433,8 @@ public class CalendarGUI extends javax.swing.JFrame {
 				java.awt.event.InputEvent.CTRL_MASK));
 		this.editWorkers.setText("Edit Workers");
 		 */
-		acceleratorText(this.editWorkers, java.awt.event.KeyEvent.VK_W, "Edit Workers");
-		this.editWorkers.addActionListener(new java.awt.event.ActionListener() {
+		acceleratorText(editWorkers, java.awt.event.KeyEvent.VK_W, "Edit Workers");
+		editWorkers.addActionListener(new java.awt.event.ActionListener() {
 			@Override
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				editWorkersActionPerformed(evt);
@@ -502,7 +442,7 @@ public class CalendarGUI extends javax.swing.JFrame {
 		});
 
 
-		this.editMenu.add(this.editWorkers);
+		editMenu.add(editWorkers);
 
 		// SWAP 1, TEAM 9
 		// QUALITY CHANGES
@@ -513,18 +453,18 @@ public class CalendarGUI extends javax.swing.JFrame {
 				java.awt.event.InputEvent.CTRL_MASK));
 		this.editDays.setText("Edit Days");
 		*/
-		acceleratorText(this.editDays, java.awt.event.KeyEvent.VK_D, "Edit Days");
-		this.editDays.addActionListener(new java.awt.event.ActionListener() {
+		acceleratorText(editDays, java.awt.event.KeyEvent.VK_D, "Edit Days");
+		editDays.addActionListener(new java.awt.event.ActionListener() {
 			@Override
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				editDaysActionPerformed(evt);
 			}
 		});
-		this.editMenu.add(this.editDays);
+		editMenu.add(editDays);
 
-		this.menuBar.add(this.editMenu);
+		menuBar.add(editMenu);
 
-		this.generateMenu.setText("Generate");
+		generateMenu.setText("Generate");
 
 		// SWAP 1, TEAM 9
 		// QUALITY CHANGES
@@ -535,14 +475,14 @@ public class CalendarGUI extends javax.swing.JFrame {
 				java.awt.event.InputEvent.CTRL_MASK));
 		this.genHtml.setText("Generate Web Page");
 		*/
-		acceleratorText(this.genHtml, java.awt.event.KeyEvent.VK_H, "Generate Web Page");
-		this.genHtml.addActionListener(new java.awt.event.ActionListener() {
+		acceleratorText(genHtml, java.awt.event.KeyEvent.VK_H, "Generate Web Page");
+		genHtml.addActionListener(new java.awt.event.ActionListener() {
 			@Override
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				genHtmlActionPerformed(evt);
 			}
 		});
-		this.generateMenu.add(this.genHtml);
+		generateMenu.add(genHtml);
 
 		// SWAP 1, TEAM 9
 		// QUALITY CHANGES
@@ -553,49 +493,53 @@ public class CalendarGUI extends javax.swing.JFrame {
 				java.awt.event.InputEvent.CTRL_MASK));
 		this.generateText.setText("Generate Text");
 		*/
-		acceleratorText(this.generateText, java.awt.event.KeyEvent.VK_T, "Generate Text");
-		this.generateText
+		acceleratorText(generateText, java.awt.event.KeyEvent.VK_T, "Generate Text");
+		generateText
 				.addActionListener(new java.awt.event.ActionListener() {
 					@Override
 					public void actionPerformed(java.awt.event.ActionEvent evt) {
 						generateTextActionPerformed(evt);
 					}
 				});
-		this.generateMenu.add(this.generateText);
+		generateMenu.add(generateText);
 
-		this.menuBar.add(this.generateMenu);
+		menuBar.add(generateMenu);
 		
-		this.fontMenu.setText("Font Options");
-		
-		this.comicMenuItem.addActionListener(new java.awt.event.ActionListener(){
+		fontMenu.setText("Font Options");
+
+        // SWAP 3, TEAM 2
+        // improved font size to make it not as impossible to read
+		comicMenuItem.addActionListener(new java.awt.event.ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                setUIFont(new javax.swing.plaf.FontUIResource(new Font("Comic Sans MS",Font.PLAIN, 36)));
+                setUIFont(new javax.swing.plaf.FontUIResource(new Font("Comic Sans MS",Font.PLAIN, 14)));
                 Main.toggleCalendar();
                 Main.cal = new CalendarGUI(schedule);
                 Main.toggleCalendar();
             }
 		});
-		this.comicMenuItem.setText("Comic Sans");
+		comicMenuItem.setText("Comic Sans");
 		
-		this.fontMenu.add(this.comicMenuItem);
-		
-		this.timesMenuItem.addActionListener(new java.awt.event.ActionListener(){
+		fontMenu.add(comicMenuItem);
+
+        // SWAP 3, TEAM 2
+        // improved font size to make it not as impossible to read
+		timesMenuItem.addActionListener(new java.awt.event.ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                setUIFont(new javax.swing.plaf.FontUIResource(new Font("Times New Roman",Font.PLAIN, 36)));
+                setUIFont(new javax.swing.plaf.FontUIResource(new Font("Times New Roman",Font.PLAIN, 14)));
                 Main.toggleCalendar();
                 Main.cal = new CalendarGUI(schedule);
                 Main.toggleCalendar();
             }
         });
 		
-		this.timesMenuItem.setText("Times New Roman");
+		timesMenuItem.setText("Times New Roman");
 		
-		this.fontMenu.add(this.timesMenuItem);
-		this.menuBar.add(this.fontMenu);
+		fontMenu.add(timesMenuItem);
+		menuBar.add(fontMenu);
 
-		setJMenuBar(this.menuBar);
+		setJMenuBar(menuBar);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
 				getContentPane());
@@ -608,13 +552,13 @@ public class CalendarGUI extends javax.swing.JFrame {
 		// future. Making only a small change to the calendar's gui would be exceedingly difficult.
 		layout.setHorizontalGroup(layout
 				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addComponent(this.jScrollPane1,
+				.addComponent(jScrollPane1,
 						javax.swing.GroupLayout.DEFAULT_SIZE, 1002,
 						Short.MAX_VALUE)
 				.addGroup(
 						layout.createSequentialGroup()
 								.addContainerGap()
-								.addComponent(this.previousMonthButton)
+								.addComponent(previousMonthButton)
 								.addPreferredGap(
 										javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 								// SWAP 1, TEAM 9
@@ -623,7 +567,7 @@ public class CalendarGUI extends javax.swing.JFrame {
 								.addComponent(this.monthTitle, 200, 200, 200)
 								.addPreferredGap(
 										javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addComponent(this.nextMonthButton)
+								.addComponent(nextMonthButton)
 								.addGap(0, 0, Short.MAX_VALUE)));
 		layout.setVerticalGroup(layout
 				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -640,18 +584,18 @@ public class CalendarGUI extends javax.swing.JFrame {
 														javax.swing.GroupLayout.DEFAULT_SIZE,
 														Short.MAX_VALUE)
 												.addComponent(
-														this.previousMonthButton,
+														previousMonthButton,
 														javax.swing.GroupLayout.DEFAULT_SIZE,
 														javax.swing.GroupLayout.DEFAULT_SIZE,
 														Short.MAX_VALUE)
 												.addComponent(
-														this.nextMonthButton,
+														nextMonthButton,
 														javax.swing.GroupLayout.PREFERRED_SIZE,
 														29,
 														javax.swing.GroupLayout.PREFERRED_SIZE))
 								.addPreferredGap(
 										javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addComponent(this.jScrollPane1,
+								.addComponent(jScrollPane1,
 										javax.swing.GroupLayout.PREFERRED_SIZE,
 										265,
 										javax.swing.GroupLayout.PREFERRED_SIZE)));
@@ -659,18 +603,12 @@ public class CalendarGUI extends javax.swing.JFrame {
 		pack();
 	}
 
-	/**
-	 * @param evt
-	 */
 	private void editWorkersActionPerformed(java.awt.event.ActionEvent evt) {
 		Main.wSet = new WorkerSetup(this.schedule.getWorkers());
 		Main.toggleWorkerSetup();
 		Main.toggleCalendar();
 	}
 
-	/**
-	 * @param evt
-	 */
 	private void editDaysActionPerformed(java.awt.event.ActionEvent evt) {
 		Main.config = new Config(Main.getDays());
 		Main.toggleConfig();
@@ -751,9 +689,6 @@ public class CalendarGUI extends javax.swing.JFrame {
 		Main.dumpConfigFile();
 	}
 
-	/**
-	 * @param evt
-	 */
 	// SWAP 1, TEAM 9
 	// SMELL: Speculative Generality - This piece of code below is for the undo button, but the
 	// undo button does not appear to be implemented. The author apppears to have put in this code 
@@ -797,6 +732,13 @@ public class CalendarGUI extends javax.swing.JFrame {
 	 * To continue with the idea of UI improvements, I added the ability to change the font
 	 * of the application during run time, should appeal to people now. 
 	 */
+
+    // SWAP 3, TEAM 2
+    // Apparently, the Devon team added the "FURTHER ELABORATION" section but forgot
+    // to comment on that section. Our team changed the way that the menu items were
+    // handled, because they were added quite unwisely. Also, it should be noted that
+    // the font sizes make the new fonts impossible to read. I guess this is a "feature".
+    // Our team then changed the font size to make it more appropriate.
 	private static void setUIFont(javax.swing.plaf.FontUIResource f)
 	{
 	    java.util.Enumeration<Object> keys = UIManager.getDefaults().keys();
@@ -811,22 +753,26 @@ public class CalendarGUI extends javax.swing.JFrame {
 	    }
 	}
 
-	private javax.swing.JMenuItem editDays;
-	private javax.swing.JMenu editMenu;
-	private javax.swing.JMenuItem editWorkers;
-	private javax.swing.JMenu fileMenu;
-	private javax.swing.JMenuItem genHtml;
-	private javax.swing.JMenu generateMenu;
-	private javax.swing.JMenuItem generateText;
-	private javax.swing.JScrollPane jScrollPane1;
-	private javax.swing.JMenuBar menuBar;
-	private javax.swing.JLabel monthTitle;
-	private javax.swing.JButton nextMonthButton;
-	private javax.swing.JPopupMenu popup;
-	private javax.swing.JButton previousMonthButton;
-	private javax.swing.JMenuItem saveChanges;
-	private javax.swing.JTable scheduleTable;
-	private javax.swing.JMenu fontMenu;
-    private javax.swing.JMenuItem comicMenuItem;
-    private javax.swing.JMenuItem timesMenuItem;
+
+    // SWAP 3, TEAM 2
+    // Improved the layout of the swing objects.
+    // of all of these objects, there are only two that
+    // are actually used out of one function, so we
+    // removed these as properties of the class.
+    private javax.swing.JTable scheduleTable;
+    private javax.swing.JLabel monthTitle;
+//	private javax.swing.JMenuItem editDays;
+//	private javax.swing.JMenu editMenu;
+//	private javax.swing.JMenuItem editWorkers;
+//	private javax.swing.JMenu fileMenu;
+//	private javax.swing.JMenuItem genHtml;
+//	private javax.swing.JMenu generateMenu;
+//	private javax.swing.JMenuItem generateText;
+//	private javax.swing.JScrollPane jScrollPane1;
+//	private javax.swing.JMenuBar menuBar;
+//	private javax.swing.JButton nextMonthButton;
+//	private javax.swing.JPopupMenu popup;
+//	private javax.swing.JButton previousMonthButton;
+//	private javax.swing.JMenuItem saveChanges;
+//	private javax.swing.JMenu fontMenu;
 }

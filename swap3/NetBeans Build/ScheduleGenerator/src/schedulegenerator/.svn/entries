@@ -4,7 +4,7 @@ dir
 108
 http://svn.csse.rose-hulman.edu/repos/csse221-201310-sg15/ScheduleGenerator/NetBeans%20Build/ScheduleGenerator/src/schedulegenerator
 http://svn.csse.rose-hulman.edu/repos/csse221-201310-sg15
-
+delete
 
 
 2012-10-21T20:06:06.185779Z
@@ -26,114 +26,12 @@ svn:special svn:externals svn:needs-lock
 
 1db15d18-d9d2-44f5-b0b5-6aa93698734a
 
-Main.java
-file
-
-
-
-
-2012-10-23T11:34:36.000000Z
-08a02ca46dd65a82617661abf3b2be7f
-2012-10-21T20:06:06.185779Z
-37
-schneimd
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2329
-
-Config.java
-file
-
-
-
-
-2012-10-23T11:34:36.000000Z
-c81f23731d8ce49df2424405c1fc7841
-2012-10-21T20:06:06.185779Z
-37
-schneimd
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-53460
-
-Config.form
-file
-
-
-
-
-2012-10-23T11:34:36.000000Z
-bb3629058fb41a4db72a12ba939b0e7c
-2012-10-21T20:06:06.185779Z
-37
-schneimd
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10561
-
 Calendar.java
 file
 
 
 
-
+delete
 2012-10-23T11:34:36.000000Z
 994155a28e47b7398a243a8240431082
 2012-10-21T20:06:06.185779Z
@@ -162,14 +60,14 @@ schneimd
 
 231
 
-Worker.java
+Config.form
 file
 
 
 
-
+delete
 2012-10-23T11:34:36.000000Z
-68f7e312c9ea2a07c2b9978fc664a83e
+bb3629058fb41a4db72a12ba939b0e7c
 2012-10-21T20:06:06.185779Z
 37
 schneimd
@@ -194,16 +92,16 @@ schneimd
 
 
 
-494
+10561
 
-WorkerSetup.java
+Config.java
 file
 
 
 
-
+delete
 2012-10-23T11:34:36.000000Z
-52a5ed4756ff1ca1207fa2bd0fc959b3
+c81f23731d8ce49df2424405c1fc7841
 2012-10-21T20:06:06.185779Z
 37
 schneimd
@@ -228,14 +126,82 @@ schneimd
 
 
 
-11217
+53460
+
+Day.java
+file
+
+
+
+delete
+2012-10-23T11:34:36.000000Z
+493079fb2cb2bb514f1c74e4d9fcb28d
+2012-10-21T20:06:06.185779Z
+37
+schneimd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+576
+
+Main.java
+file
+
+
+
+delete
+2012-10-23T11:34:36.000000Z
+08a02ca46dd65a82617661abf3b2be7f
+2012-10-21T20:06:06.185779Z
+37
+schneimd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2329
 
 Schedule.java
 file
 
 
 
-
+delete
 2012-10-23T11:34:36.000000Z
 dfbd293d74e7089e342444021ba1e414
 2012-10-21T20:06:06.185779Z
@@ -264,12 +230,46 @@ schneimd
 
 186
 
+Worker.java
+file
+
+
+
+delete
+2012-10-23T11:34:36.000000Z
+68f7e312c9ea2a07c2b9978fc664a83e
+2012-10-21T20:06:06.185779Z
+37
+schneimd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+494
+
 WorkerSetup.form
 file
 
 
 
-
+delete
 2012-10-23T11:34:36.000000Z
 875bf4d49e54f9e8b149fe340cbc0d78
 2012-10-21T20:06:06.185779Z
@@ -298,14 +298,14 @@ schneimd
 
 12776
 
-Day.java
+WorkerSetup.java
 file
 
 
 
-
+delete
 2012-10-23T11:34:36.000000Z
-493079fb2cb2bb514f1c74e4d9fcb28d
+52a5ed4756ff1ca1207fa2bd0fc959b3
 2012-10-21T20:06:06.185779Z
 37
 schneimd
@@ -330,5 +330,5 @@ schneimd
 
 
 
-576
+11217
 

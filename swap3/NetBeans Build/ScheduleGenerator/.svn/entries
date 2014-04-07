@@ -4,7 +4,7 @@ dir
 108
 http://svn.csse.rose-hulman.edu/repos/csse221-201310-sg15/ScheduleGenerator/NetBeans%20Build/ScheduleGenerator
 http://svn.csse.rose-hulman.edu/repos/csse221-201310-sg15
-
+delete
 
 
 2012-10-21T20:06:06.185779Z
@@ -28,19 +28,51 @@ svn:special svn:externals svn:needs-lock
 
 build
 dir
+
+
+
+delete
 
-nbproject
-dir
-
-src
-dir
+build.xml
+file
+
+
+
+delete
+2012-10-23T11:34:37.000000Z
+bad7c844d111d0853adc30b4d5233c86
+2012-10-21T20:06:06.185779Z
+37
+schneimd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3746
 
 manifest.mf
 file
 
 
 
-
+delete
 2012-10-23T11:34:37.000000Z
 1a85ea4420d859b3aab3af09fc398382
 2012-10-21T20:06:06.185779Z
@@ -69,37 +101,17 @@ schneimd
 
 85
 
-build.xml
-file
+nbproject
+dir
 
 
 
-
-2012-10-23T11:34:37.000000Z
-bad7c844d111d0853adc30b4d5233c86
-2012-10-21T20:06:06.185779Z
-37
-schneimd
+delete
+
+src
+dir
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3746
+delete
 

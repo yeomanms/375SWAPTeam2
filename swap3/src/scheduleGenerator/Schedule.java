@@ -29,13 +29,13 @@ public class Schedule extends Thread implements Serializable {
 	/*
 	 * Removing magic numbers from the numForName method.
 	 */
-	private int final SUNDAY = 1;
-	private int final MONDAY = 2;
-	private int final TUESDAY = 3;
-	private int final WEDNESDAY = 4;
-	private int final THURSDAY = 5;
-	private int final FRIDAY = 6;
-	private int final SATURDAY = 7;
+	private final int SUNDAY = 1;
+	private final int MONDAY = 2;
+	private final int TUESDAY = 3;
+	private final int WEDNESDAY = 4;
+	private final int THURSDAY = 5;
+	private final int FRIDAY = 6;
+	private final int SATURDAY = 7;
 
 	/**
 	 * Used to construct an initial schedule, used if one does not exist.

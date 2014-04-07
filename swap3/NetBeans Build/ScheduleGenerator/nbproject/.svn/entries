@@ -4,7 +4,7 @@ dir
 108
 http://svn.csse.rose-hulman.edu/repos/csse221-201310-sg15/ScheduleGenerator/NetBeans%20Build/ScheduleGenerator/nbproject
 http://svn.csse.rose-hulman.edu/repos/csse221-201310-sg15
-
+delete
 
 
 2012-10-21T20:06:06.185779Z
@@ -26,12 +26,87 @@ svn:special svn:externals svn:needs-lock
 
 1db15d18-d9d2-44f5-b0b5-6aa93698734a
 
+build-impl.xml
+file
+
+
+
+delete
+2012-10-23T11:34:35.000000Z
+0ea3feb42e55b13a3de798e1a7489429
+2012-10-21T20:06:06.185779Z
+37
+schneimd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+78079
+
+genfiles.properties
+file
+
+
+
+delete
+2012-10-23T11:34:35.000000Z
+63794d64d905449c2f68d783bb7ef5d9
+2012-10-21T20:06:06.185779Z
+37
+schneimd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+475
+
+private
+dir
+
+
+
+delete
+
 project.properties
 file
 
 
 
-
+delete
 2012-10-23T11:34:35.000000Z
 9bdad559827534a1522bddfbec622179
 2012-10-21T20:06:06.185779Z
@@ -65,7 +140,7 @@ file
 
 
 
-
+delete
 2012-10-23T11:34:35.000000Z
 a104a66ec217aee975cab55612199e6c
 2012-10-21T20:06:06.185779Z
@@ -93,75 +168,4 @@ schneimd
 
 
 525
-
-genfiles.properties
-file
-
-
-
-
-2012-10-23T11:34:35.000000Z
-63794d64d905449c2f68d783bb7ef5d9
-2012-10-21T20:06:06.185779Z
-37
-schneimd
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-475
-
-private
-dir
-
-build-impl.xml
-file
-
-
-
-
-2012-10-23T11:34:35.000000Z
-0ea3feb42e55b13a3de798e1a7489429
-2012-10-21T20:06:06.185779Z
-37
-schneimd
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-78079
 

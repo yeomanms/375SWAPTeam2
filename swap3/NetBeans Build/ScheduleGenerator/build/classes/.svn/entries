@@ -4,7 +4,7 @@ dir
 108
 http://svn.csse.rose-hulman.edu/repos/csse221-201310-sg15/ScheduleGenerator/NetBeans%20Build/ScheduleGenerator/build/classes
 http://svn.csse.rose-hulman.edu/repos/csse221-201310-sg15
-
+delete
 
 
 2012-10-21T20:06:06.185779Z
@@ -31,7 +31,41 @@ file
 
 
 
+delete
+2012-10-23T11:34:34.000000Z
+d41d8cd98f00b204e9800998ecf8427e
+2012-10-21T20:06:06.185779Z
+37
+schneimd
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
+.netbeans_update_resources
+file
+
+
+
+delete
 2012-10-23T11:34:34.000000Z
 d41d8cd98f00b204e9800998ecf8427e
 2012-10-21T20:06:06.185779Z
@@ -62,38 +96,8 @@ schneimd
 
 schedulegenerator
 dir
-
-.netbeans_update_resources
-file
 
 
 
-
-2012-10-23T11:34:34.000000Z
-d41d8cd98f00b204e9800998ecf8427e
-2012-10-21T20:06:06.185779Z
-37
-schneimd
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0
+delete
 

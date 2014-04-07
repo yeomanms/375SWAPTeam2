@@ -13,11 +13,6 @@ import java.util.List;
 
 import javax.swing.*;
 
-/**
- * 
- * @author schneimd
- */
-
 // SWAP 1, TEAM 9
 // SMELL: Large Class - This class is absolutely enormous, which would indicate
 // to us
@@ -40,7 +35,7 @@ public class Config extends javax.swing.JFrame {
 	/**
 	 * Used to edit days.
 	 * 
-	 * @param days
+	 * @param daysi
 	 */
 	@SuppressWarnings("unchecked")
 	public Config(ArrayList<Day> days) {
@@ -114,7 +109,7 @@ public class Config extends javax.swing.JFrame {
 
 	private void initComponents() {
 
-		this.jPanel1 = new javax.swing.JPanel();
+		JPanel jPanel1 = new javax.swing.JPanel();
 		this.jLabel1 = new javax.swing.JLabel();
 		this.nextButton = new javax.swing.JButton();
 		this.dayTabs = new javax.swing.JTabbedPane();
@@ -144,8 +139,8 @@ public class Config extends javax.swing.JFrame {
 		});
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(
-				this.jPanel1);
-		this.jPanel1.setLayout(jPanel1Layout);
+				jPanel1);
+		jPanel1.setLayout(jPanel1Layout);
 		jPanel1Layout
 				.setHorizontalGroup(jPanel1Layout
 						.createParallelGroup(
@@ -267,7 +262,7 @@ public class Config extends javax.swing.JFrame {
 				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGroup(
 						layout.createSequentialGroup()
-								.addComponent(this.jPanel1,
+								.addComponent(jPanel1,
 										javax.swing.GroupLayout.PREFERRED_SIZE,
 										javax.swing.GroupLayout.DEFAULT_SIZE,
 										javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -276,7 +271,7 @@ public class Config extends javax.swing.JFrame {
 		layout.setVerticalGroup(layout.createParallelGroup(
 				javax.swing.GroupLayout.Alignment.LEADING).addGroup(
 				layout.createSequentialGroup()
-						.addComponent(this.jPanel1,
+						.addComponent(jPanel1,
 								javax.swing.GroupLayout.PREFERRED_SIZE,
 								javax.swing.GroupLayout.DEFAULT_SIZE,
 								javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -290,9 +285,7 @@ public class Config extends javax.swing.JFrame {
 		pack();
 	}// </editor-fold>
 
-	/**
-	 * @param evt
-	 */
+
 	// SWAP 1, TEAM 9
 	// SMELL: Shotgun Surgery - If we chose to modify what happens when someone
 	// performs an action on a day checkbox,
@@ -502,14 +495,14 @@ public class Config extends javax.swing.JFrame {
 		}
 	}
 
+    // SWAP 3, TEAM 2
+    // removed duplicated code from the stretch function.
 	private void stretch() {
-		if (this.numSelected > 0) {
+		if (this.firstSelection = this.numSelected > 0) {
 			this.setSize(801, 290);
-			this.firstSelection = false;
-		} else {
-			this.setSize(801, 87);
-			this.firstSelection = true;
-		}
+            return;
+        }
+		this.setSize(801, 87);
 	}
 
 	/**
@@ -526,16 +519,11 @@ public class Config extends javax.swing.JFrame {
 					break;
 				}
 			}
-		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(Config.class.getName()).log(
-					java.util.logging.Level.SEVERE, null, ex);
-		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(Config.class.getName()).log(
-					java.util.logging.Level.SEVERE, null, ex);
-		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(Config.class.getName()).log(
-					java.util.logging.Level.SEVERE, null, ex);
-		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        // SWAP 3, TEAM 2
+        // Removed a bunch of duplicate catch statments.
+        // This reduces the size of the file, like the last team
+        // wanted.
+		} catch (Exception ex) {
 			java.util.logging.Logger.getLogger(Config.class.getName()).log(
 					java.util.logging.Level.SEVERE, null, ex);
 		}
@@ -563,6 +551,7 @@ public class Config extends javax.swing.JFrame {
 		days.add(new Day(dayName, currentDay));
 	}
 
+
 	private JScrollPane[] scrollPaneList = new JScrollPane[7];
 	private JButton[] addJobButton = new JButton[7];
 	private JButton[] deleteJobButton = new JButton[7];
@@ -572,8 +561,12 @@ public class Config extends javax.swing.JFrame {
 	private JPanel[] dayTab = new JPanel[7];
 	private JCheckBox[] checkList = new JCheckBox[7];
 
+
+    // SWAP 3, TEAM 2
+    // We should remove the property jPanel1, becasue it
+    // is only used within one method.
 	private javax.swing.JTabbedPane dayTabs;
 	private javax.swing.JLabel jLabel1;
-	private javax.swing.JPanel jPanel1;
+//	private javax.swing.JPanel jPanel1;
 	private javax.swing.JButton nextButton;
 }
